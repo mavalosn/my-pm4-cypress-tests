@@ -46,8 +46,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           install: false
-          start: npx cypress run
-          wait-on: https://ci-3579d2cbb5.eng.processmaker.net/
+          start: npx cypress run --browser firefox
+          #wait-on: http://localhost:8080/
           config-file: cypress.json
           spec: "cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js"
           record: true
