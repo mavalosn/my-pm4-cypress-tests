@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended", "plugin:prettier/recommended", "plugin:cypress/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "cypress/no-unnecessary-waiting": "warn",
+        "prettier/prettier": ["warn", { "endOfLine": "auto" }],
+        "cypress/no-async-tests": "warn",
+        "no-multiple-empty-lines": ["warn", { "max": 2 }]
+    }
+}

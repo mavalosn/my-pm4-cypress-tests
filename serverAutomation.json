@@ -1,0 +1,12 @@
+{
+        "serverIntensify": {
+          "baseUrl": "https://dev-intensifi-se.processmaker.net",
+          "usernameAdmin": "admin",
+          "passwordAdmin": "B$6Lb8%BZ^*nq5mt",
+          "usernameBanker": "banker",
+          "passwordBanker": "12345678",
+          "tests": [
+            "cypress/integration/tests/process_SE/intensify.spec.js"
+          ]
+        }
+}
