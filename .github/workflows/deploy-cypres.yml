@@ -8,10 +8,10 @@ on:
 jobs:
   ci:
     runs-on: 'ubuntu-latest'
-    #strategy:
-    #  fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-    #  matrix:
-    #    containers: [ 0, 1, 2, 3, 4 ]
+    strategy:
+      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+      matrix:
+        containers: [ 0, 1, 2 ]
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@main
