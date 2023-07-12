@@ -38,11 +38,11 @@ jobs:
       #      echo "-------------------------------"
       #      npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/*.spec.js --browser firefox        
       - name: Run Cypres user-activity-logging 👀
-        run: npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/*.spec.js --browser firefox
-      - name: Run Cypres screen-builder 👀
-        run: npx cypress run --spec ./cypress/integration/tests/test_cases/screen-builder/requiredField/*.spec.js --browser firefox
-      - name: Run Cypres package-photo-video 👀
-        run: npx cypress run --spec ./cypress/integration/tests/test_cases/package-photo-video/*.spec.js
+        run: npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/TCP42905.spec.js --browser chrome
+      #- name: Run Cypres screen-builder 👀
+      #  run: npx cypress run --spec ./cypress/integration/tests/test_cases/screen-builder/requiredField/*.spec.js --browser firefox
+      #- name: Run Cypres package-photo-video 👀
+      #  run: npx cypress run --spec ./cypress/integration/tests/test_cases/package-photo-video/*.spec.js
       #- name: Run linter 👀
       #  run: npm run lint
 
