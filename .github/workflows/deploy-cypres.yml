@@ -8,10 +8,10 @@ on:
 jobs:
   ci:
     runs-on: 'ubuntu-latest'
-    strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [ 0, 1, 2 ]
+    #strategy:
+    #  fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+    #  matrix:
+    #    containers: [ 0, 1, 2 ]
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@main
@@ -34,7 +34,7 @@ jobs:
             ls -la
             pwd
             echo "-------------------------------"
-            npx cypress run --spec ./cypress/integration/tests/test_cases/core/TCP42076.spec.js
+            npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js
       #- name: Run linter 👀
       #  run: npm run lint
 
