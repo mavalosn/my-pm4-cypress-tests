@@ -33,6 +33,7 @@ jobs:
             npm -v
             ls -la
             pwd
+            npx cypress --version
             echo "-------------------------------"
       #      npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js
       #- name: Run linter 👀
@@ -46,7 +47,7 @@ jobs:
         with:
           install: false
           start: npx cypress run
-          #wait-on: http://localhost:8080/
+          wait-on: https://ci-3579d2cbb5.eng.processmaker.net/
           config-file: cypress.json
           spec: "cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js"
           record: true
