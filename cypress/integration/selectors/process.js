@@ -2,12 +2,21 @@ export default{
     prrocessEvent: '(//div[@title="eventName"])[index]',
     recentlyDropedEvent: '[data-type="processmaker.components.nodes.eventName.Shape"]',
     zoomOutBtn: '[data-test="zoom-out"]',
-    saveBtn: '[title="Save"]',
+    saveBtn: '//a[@data-test="publish-btn"]',
     saveBtnInPopUp: '//button[text()="Save"]',
+    saveBtnPublish: '//*[@id="createPmBlock___BV_modal_footer_"]/div/div/button[2]',
     saveChangesModal: '//h5[text()="Commit Changes"]',
     addProcessBtn: '[aria-label="Create Process"]',
+    blankProcessBtbXpath:
+        '//div[@id="template-options"]//h5[text()="Blank Process"]',
     nameTxtBx: '[name="name"]',
     descriptionTxtBx: '[name="description"]',
+    managerFieldXpath: '//div[@class="modal-body"]/fieldset//div[@name="process_manager_id"]',
+    managerFieldTxtXpath:'//div[@class="modal-body"]//legend[contains(text(),"Process Manager")]/following-sibling::div//input',
+    managerSelectUserListXpath:'//div[@class="modal-body"]//legend[contains(text(),"Process Manager")]/following-sibling::div//ul/li[@aria-label="managerUserName"]',
+    processCategoryFieldXpath:'//div[@class="modal-body"]/div[@name="category"]',
+    processCategoryInputXpath:'//div[@class="modal-body"]/div[@name="category"]//input',
+    selectCategoryListXpath:'//div[@class="modal-body"]/div[@name="category"]//ul[@role="listbox"]/li//span[text()="categoryName"]',
     saveBtnToAddProcess: '//button[text()="Save"]',
     screenForInputDropdown: '//label[text()="Screen for Input"]//following-sibling::div/div[@class="multiselect__select"]',
     screenInputTxtBx: '[placeholder="type here to search"]',
@@ -58,16 +67,18 @@ export default{
     resMappingEditOption:"//a[@data-cy='inspector-options-edit']",
     terminateEndEventBtn:"[data-test='switch-to-terminate-end-event']",
     pdfFileNameInput:"[name='PDF File Name']",
-    searchInputBox:"#processIndex > #search-bar > :nth-child(1) > .flex-grow-1 > #search > .input-group > #search-box",
+    searchInputBox:"//div[@id='processIndex']//textarea[@aria-label='Search']",
     searchctrl:"//i[@class='fas fa-search']",
     editctrl:"[title='Edit'] > .fas",
     loadingSpinnerProcess:"#processIndex > div.container-fluid > div > div.jumbotron.jumbotron-fluid",
-    processTable: '//div[@id="processIndex"]/div[2]/div/div[2]/table/tbody/tr',
+    processTable: '//div[@id="categorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="categorizedList"]/descendant::div[@id="processIndex"]//tbody/tr',
     importProcessBtn:"[id='import_process']",
+    titleImportProcess:"//div[@id='importProcess']//h5",
     browseBtn: "[id='pre-import']>button",
-    inputToFileUpload: "[id='import-file']",
-        importBtn: "[id='card-footer-pre-import'] > button.btn.btn-secondary.ml-2",
-        loadingProcessSpinner: "[class='fas fa-circle-notch fa-spin']",
+    inputToFileUpload: "//label[@id='submitFile']/input[@type='file']",
+    importBtn: "//button[@type='button']/span[text()='Import']",
+    loadingProcessSpinner: "[class='fas fa-circle-notch fa-spin']",
+    processRailBottomXpath: '//div[@data-cy="rail-bottom"]',
 
     //Start Event
     webEntryTab:"[id='accordion-button-webentry']",
@@ -157,14 +168,14 @@ export default{
     categoryInput: ".multiselect__tags-wrap",
     nameProcessInModeler: '//*[@id="breadcrumbs"]/ol/li[5]/span',
     categoryListOptions: '[class="multiselect__content-wrapper"]',
-    downloadBtn: "//button[text()='Download']",
+    downloadBtn: "//div[@id='exportProcess']//button[contains(text(),'Export')]",
     uploadBPMNBrowseButton: '[class="custom-file-input"]',
     saveBtnBPMN: "#createProcess___BV_modal_footer_ > .btn-secondary",
     exportBtn: "[title='Export'] > .fas",
     optionCategory:
         '//label[text()="Category"]/parent::div//div[@class="multiselect__content-wrapper"]//li[1]',
     labelCategory: '//label[text()="Category"]',
-    menuSidebar: '[id="sidebar-inner"]',
+    menuSidebarXpath: '//div[@id="export-manager"]//h5[text()="Export Process"]',
     expandBtn: '[aria-label="Expand sidebar"]',
     optionFirstInMenuSidebar: '//*[@id="Sidebaricon"][1]',
     //add screen to end Event
@@ -187,6 +198,27 @@ export default{
     clickOndropDown: "(//div[@class = 'multiselect__select'])[2]",
     vocabInput: "(//input[@type = 'text'])[2]",
     vocabDropdownOption: '//li[@role="option"]//span[text()="name"]',
-    clickonSavevacab: "//button[text()[normalize-space() = 'Save']]"
+    clickonSavevacab: "//button[text()[normalize-space() = 'Save']]",
+    threePointsBtnXpath:
+        '//div[@id="categorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="categorizedList"]/descendant::div[@id="processIndex"]//table/tbody/tr//button[@aria-haspopup="menu"]',
+    
+        
+        //export xpaths
+    exportTitleProcessXpath: "//div[@id='exportProcess']//h5/span",
+    exportTitleSetPasswordXpath: "//header/h5/div[text()='Set Password']",
+    passwordProtectFieldXpath: "//label[contains(text(),'Password Protect Export')]/preceding-sibling::input[@type='checkbox']",
+    setPasswordFieldXpath: "//input[@id='set-password']",
+    confirmPasswordFieldXpath: "//input[@id='confirm-password']",
+    exportBtnXpath: "//footer/button[text()='Export']",
+    messageExportSuccessfulXpath: "//div[@class='export-successful']",
+    exportCloseBtnXpath: "//footer/button[text()='Close']",
+    
+       // PM Block
+
+    saveBtnPublish: '//*[@id="createPmBlock___BV_modal_footer_"]/div/div/button[2]',
+    searchInputPmblock: "//div[@id='pmBlockList']//input[@aria-label='Search']",
+    threePointsBtnXpathPmblock: '//div[@id="pmCategorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="pmCategorizedList"]/descendant::div[@id="pmBlockList"]//table/tbody/tr//button[@aria-haspopup="menu"]',
+    confirmBtnArchive: '//button[text()="Confirm"]',
+
 
 }

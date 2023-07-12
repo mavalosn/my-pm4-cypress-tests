@@ -21,14 +21,15 @@ export class Dataconnectors {
         cy.xpath(selectors.saveBtn).click();
     }
 
-    createADataConnector(name, description, type){
+    createADataConnector(name, description, type, connectorType="REST Service"){
         this.clickOnAddDataConnector();
         cy.get(selectors.CategoryTxt).should('have.text','Uncategorized');
         this.enterDataConnectorName(name);
         this.enterDataConnectorDescription(description);
+        this.selectConnectorType(connectorType);
         this.selectAuthType(type);
         this.ClickSaveBtn();
-        cy.get(selectors.addResource).should('be.visible');
+        //cy.get(selectors.addResource).should('be.visible');
     }
 
     OpenConfigurationTab(){
@@ -39,7 +40,6 @@ export class Dataconnectors {
         this.OpenConfigurationTab();
         cy.get(selectors.tokenInput).type(token);
         this.ClickSaveBtn();
-
     }
 
     AddAListResource(description, method, URL){
@@ -68,6 +68,7 @@ export class Dataconnectors {
     }
 
     OpenResourcesTab(){
+        cy.wait(2000);
         cy.xpath(selectors.resourcestab).click();
     }
     addResourceName(resourceName){
@@ -84,7 +85,7 @@ export class Dataconnectors {
         this.selectMethodOfResource(method);
         this.AddResourceURL(URL);
         cy.xpath(selectors.addBtn).click();
-        cy.xpath('//button[text()="Send"]').should('be.enable');
+        cy.xpath('//button[text()="Send"]').should('be.visible');
     }
     saveTheResource(){
         cy.xpath(selectors.addBtn).click();

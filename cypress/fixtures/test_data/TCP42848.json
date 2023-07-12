@@ -1,0 +1,32 @@
+{
+    "name":"TCP4-2848",
+    "screens":[
+        {
+            "name":"TCP4-2848-FormScreen Photo-Video",
+            "description":"Test Package-Photo-Video",
+            "type":"Form",
+            "controlls":[
+                {
+                    "name":"Date Picker" ,
+                    "variable_name":"date",
+                    "data_type":"Datetime"
+                  },
+                {
+                    "name":"Photo/Video",
+                    "variable_name":"photo_video_1",
+                    "file_name":"photo1TCP4-2848",
+                    "capture_type":"Photo"
+                }     
+            ],
+            "controlls2": 
+            [
+                {
+                    "name":"Photo/Video",
+                    "variable_name":"photo_video_1",
+                    "file_name":"photo2tcp4-2848",
+                    "capture_type":"Photo"
+                }
+            ]
+        }
+    ]
+}

@@ -4,6 +4,7 @@ export default{
     descriptionTxtBx: '[name="description"]',
     typeDropDown: 'select[name="type"]',
     saveBtn: '//button[text()="Save"]',
+    savePublishBtn: '//button[text()="Publish"]',
     varaibleNameTxtBx: '[name="Variable Name"]',
     dataSourceDropDown: 'select#data-sources',
     allowMultipleSelections: '//div[text()[normalize-space()="Allow Multiple Selections"]]/input',
@@ -17,6 +18,7 @@ export default{
     richTextContentTxtArea: '[data-cy="inspector-content"]',
     saveScreenBtn: 'button[title="Save Screen"]',
     saveVersionsBtn: 'button[title="Save Versions"]',
+    savePublishVersionsBtn: 'button[title="Publish"]',
     optionsLabelTxtBx:"[data-cy='inspector-options-label']",
     variableDataProTxtBx:"[data-cy='inspector-options-value']",
     labelNameTxtBx:'[data-cy="inspector-label"]',
@@ -183,5 +185,10 @@ export default{
     clickOnChartDrpDwn:"//div[@class='multiselect__select']",
     chartInptBx:"//input[@class='multiselect__input']",
     clickOnChart:"//li[@class='multiselect__element']//span[text()='name']",
+
+    // Photo/Video 
+
+    captureTypePhotoVideo:'//*[@id="captureType"]',
+    fileNamePhotoVideo: "//input[@data-cy='photo-video-inspector']"
 
 }

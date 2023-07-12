@@ -131,4 +131,14 @@ export class NavigationHelper {
         cy.visit('/designer/vocabularies');
         cy.title().should('eq','Vocabularies - ProcessMaker');
     }
+
+    navigateToPmBlock(){
+        cy.visit('/designer/pm-blocks');
+        cy.title().should('eq','PM Blocks - ProcessMaker');
+    }
+
+    navigateToAuthClients(){
+        cy.visit('/admin/auth-clients');
+        cy.title().should('eq','Auth Clients - ProcessMaker');
+    } 
 }

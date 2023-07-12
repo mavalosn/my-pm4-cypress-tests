@@ -1,4 +1,5 @@
 export default{
+    threePointsBtnXpath:'//div[@id="main"]//ul/li/a[@id="nav-users-tab"]//ancestor::div[@id="mainbody"]/descendant::div[@class="container-fluid"]//table/tbody/tr//button[@aria-haspopup="menu"]',
     searchInputBox:"[id='search'] input",
     searchctrl:"//i[@class='fas fa-search']",
     RecordBtnForGivenCollection:" //span[text()[normalize-space()='collectionName']]//ancestor::tr//a[@title='Records']",
@@ -25,7 +26,7 @@ export default{
     //collectionNameInput:'//a[text()[normalize-space()="name"]]',
 
     //users
-    newUserBtn: '.d-flex > .btn',
+    newUserBtn: 'button[aria-label="Create User"]',
     usernameInputTxtBox: '[id="username"]',
     firstNameInputTxtBox: '[id="firstname"]',
     lastNameInputTxtBox: '[id="lastname"]',
@@ -185,5 +186,6 @@ export default{
     deleteCommentsPermission: '[for="permission_delete-comments"]',
     editCommentsPermission: '[for="permission_edit-comments"]',
     viewCommentsPermission: '[for="permission_view-comments"]',
-
+    //Authentication Client
+    authClientButton: '//button[@aria-label="Create Auth Client"]',
 }

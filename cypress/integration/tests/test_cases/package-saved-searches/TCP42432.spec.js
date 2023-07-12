@@ -12,7 +12,7 @@ describe("Processmaker Test Cases", () => {
         login.login();
     })
 
-    it('TCP4- 2432', () => {
+    it('TCP4- 2432 Check Scheduled report, send report, and enable notifications in save search', () => {
         //Go to all requests
         navHelper.navigateToAllRequests();
 
@@ -28,7 +28,7 @@ describe("Processmaker Test Cases", () => {
         saveSearch.viewSaveSearch(namesave);
 
         //Send report
-        var email = "mayra.quispe@processmaker.com";
+        var email = "automation.pm4@gmail.com";
         var subject = "test_save_search_subject";
         var body = "test_save_searh_body";
         saveSearch.sendReportSaveSearch(email,subject,body);

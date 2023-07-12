@@ -21,6 +21,9 @@ export class Screens {
 	clickOnSave() {
 		cy.xpath(Selectors.saveBtn).should('be.visible').click();
 	}
+	clickOnPublishSave() {
+		cy.xpath(Selectors.savePublishBtn).should('be.visible').click();
+	}
 
 	createScreen(name, description, type) {
 		this.clickOnAddScreen();
@@ -32,7 +35,7 @@ export class Screens {
 		if (type == 'Conversational') {
 			cy.get(Selectors.saveScreenBtn).should('be.visible');
 		} else {
-			cy.get(Selectors.saveVersionsBtn).should('be.visible');
+			cy.get(Selectors.savePublishVersionsBtn).should('be.visible');
 		}
 	}
 
@@ -54,7 +57,7 @@ export class Screens {
 		this.clickOnSaveVersions();
 		cy.get(Selectors.versionNameTxtBx).type(versionName).should('have.value', versionName);
 		cy.get(Selectors.aditionalDetailsTxtArea).type(additionalDetails);
-		this.clickOnSave();
+		this.clickOnPublishSave();
 		cy.get(Selectors.alertSuccess).should('be.visible');
 		cy.get(Selectors.alertSuccess).should('not.exist');
 	}
@@ -64,7 +67,7 @@ export class Screens {
 	}
 
 	clickOnSaveVersions() {
-		cy.get(Selectors.saveVersionsBtn).click();
+		cy.get(Selectors.savePublishVersionsBtn).click();
 	}
 
 	addScreen(screenData, timeStamp) {
@@ -233,6 +236,10 @@ export class Screens {
 				case 'watchers':
 					this.addwatchers(controllsData[i], timeStamp);
 					break;
+				case 'Photo/Video':
+					this.addPhotoVideo(controllsData[i]);
+					break;
+
 			}
 		}
 	}
@@ -428,8 +435,27 @@ export class Screens {
 		}
 	}
 
+	addPhotoVideo(data) {
+		this.addControl(data.name);
+		this.setVariableName(data.varaible_name);
+		this.setLabelName(data.label_name);
+		this.addConfigurationToPhoToVideo(data.capture_type, data.file_name);
+		if (data.validation_rule != null) {
+			this.addvalidationrule(data);
+		}
+	}
 
-
+	addConfigurationToPhoToVideo(captureTypePhotoVideo,fileNamePhotoVideo){
+        cy.xpath(Selectors.clickOnConfire).click()
+        
+        
+        if(captureTypePhotoVideo != null){
+            cy.xpath(Selectors.captureTypePhotoVideo).select(captureTypePhotoVideo);
+        }
+        if(fileNamePhotoVideo != null){
+            cy.xpath(Selectors.fileNamePhotoVideo).clear().type(fileNamePhotoVideo);
+        }
+    }
 
 	addFileDownloadControl(data) {
 		this.addControl(data.name);

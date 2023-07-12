@@ -113,6 +113,21 @@ describe("Processmaker Test Cases", () => {
         // ***************FIN***************
     });
 
+    it("test import with password", () => {
+        var processName = "dataConnector_errorHandling";
+        var filePath = "processes/dataConnector_errorHandling.json";
+
+        //Step 1: ***************Import the process***************
+        navigationHelper.navigateToProcessPage();
+        process.verifyPresenceOfProcessAndImportProcess(
+            processName,
+            filePath,
+            [],
+            "Colosa123"
+        );
+        // ***************FIN***************
+    });
+
 
     afterEach( () => {
         navigationHelper.navigateToLogOut();

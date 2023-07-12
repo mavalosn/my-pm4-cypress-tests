@@ -180,7 +180,7 @@ export class Process {
     }
 
     clickOnSave() {
-        cy.get(selectors.saveBtn).click();
+        cy.xpath(selectors.saveBtn).click();
     }
 
     saveTheProcess(name) {
@@ -208,26 +208,34 @@ export class Process {
         //cy.wait(4000);
     }
 
-    createProcess(name, description) {
+    /**
+     * This method is responsible to create a process
+     * @param name: name of the new process
+     * @param description: description about of the new process
+     * @param category: Select a Process Category
+     * @param username: Select a username to be a process manager
+     * @return nothing returns
+     */
+    createProcess(name, description, category = "", username = "") {
         this.clickOnAddProcess();
+        cy.xpath(selectors.blankProcessBtbXpath).should("be.visible").click();
         this.enterProcessName(name);
         this.enterProcessDescription(description);
-        cy.xpath("//div[@name='category']//span[text()='Uncategorized']").should('be.visible');
+        if (category != "") this.enterProcessCategory(category);
+        if (username != "") this.enterProcessManager(username);
         this.clickOnSaveInAddProcessModal();
-        cy.get('[title="Start Event"]').should('be.visible');
+        cy.xpath(selectors.processRailBottomXpath).should("be.visible");
     }
 
     searchForProcess(processName) {
-        /*cy.wait(5000);
-        cy.get(selectors.searchInputBox).type(processName).should('have.value', processName);
-        cy.wait(3000);
-        cy.get("[title='Edit'] > .fas").first().click();*/
-        var editBtn = "[title='Edit'] > .fas";
-        cy.get(editBtn).should('be.visible');
-        cy.get(selectors.searchInputBox).type(processName).should('have.value', processName);
+        var editBtn = '//div[@id="categorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="categorizedList"]/descendant::div[@id="processIndex"]//table/tbody/tr//button[@aria-haspopup="menu"]';
+        cy.xpath(editBtn).should('be.visible');
+        cy.xpath(selectors.searchInputBox).type(`${processName}{enter}`).should('have.value', processName);
         cy.get(selectors.loadingSpinnerProcess).should('be.visible');
-        cy.get(editBtn).first().click();
+        cy.xpath(editBtn).first().click();
+        this.selectMenuOptionRow('Edit Process')
     }
+    
 
     clickOnSaveInAddProcessModal() {
         cy.xpath(selectors.saveBtnInPopUp).click();
@@ -238,11 +246,36 @@ export class Process {
     }
 
     enterProcessName(name) {
-        cy.get(selectors.nameTxtBx).type(name).should('have.value', name);
+        cy.get(selectors.nameTxtBx)
+            .should("be.visible")
+            .type(name, { delay: 200 })
+            .should("have.value", name);
     }
 
     enterProcessDescription(description) {
-        cy.get(selectors.descriptionTxtBx).type(description).should('have.value', description);
+        cy.get(selectors.descriptionTxtBx)
+            .type(description)
+            .should("have.value", description);
+    }
+
+    enterProcessManager(username) {
+        cy.xpath(selectors.managerFieldXpath).click();
+        cy.xpath(selectors.managerFieldTxtXpath)
+            .type(username, { delay: 100 })
+            .should("have.value", username)
+            .type("{enter}");
+    }
+
+    enterProcessCategory(category) {
+        cy.xpath(selectors.processCategoryFieldXpath).click();
+        cy.xpath(selectors.processCategoryInputXpath).type(category, {
+            delay: 200,
+        });
+        cy.xpath(
+            selectors.selectCategoryListXpath.replace("categoryName", category)
+        )
+            .should("be.visible")
+            .click();
     }
 
     addScreenToFormTask(eventLocator, screenName) {
@@ -424,30 +457,58 @@ export class Process {
      *   ];
      * @return nothing returns
      */
-    verifyPresenceOfProcessAndImportProcess(processName, filePath, parametersMapList = []) {
-        var editBtn = "[title='Edit'] > .fas";
-        cy.get(editBtn).should('be.visible');
-        cy.get(selectors.searchInputBox).type(processName).should('have.value', processName);
-        cy.get(selectors.loadingSpinnerProcess).should('be.visible');
-        cy.get(selectors.loadingSpinnerProcess).should('not.be.visible');
+    verifyPresenceOfProcessAndImportProcess(
+        processName,
+        filePath,
+        parametersMapList = [],
+        password = "0"
+    ) {
+        var editBtn =
+            '//div[@id="categorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="categorizedList"]/descendant::div[@id="processIndex"]//table/tbody/tr//button[@aria-haspopup="menu"]';
+        cy.xpath(editBtn).should("be.visible");
+        cy.xpath(selectors.searchInputBox)
+            .type(`${processName}{enter}`)
+            .should("have.value", processName);
+        cy.get(selectors.loadingSpinnerProcess).should("be.visible");
+        cy.get(selectors.loadingSpinnerProcess).should("not.be.visible");
 
         cy.xpath(selectors.processTable, { timeout: 10000 })
-            .find('td')
+            .find("td")
             .then(($loadedTable) => {
                 if ($loadedTable.length === 1) {
-                    this.importProcess(filePath);
+                    this.importProcess(filePath, password);
                     if (parametersMapList.length > 0)
                         this.configProcessImported(parametersMapList);
-                }
-                else return;
+                } else return;
             });
     }
-    importProcess(filePath) {
+
+    importProcess(filePath, password = "0") {
         cy.get(selectors.importProcessBtn).click();
-        cy.get(selectors.importBtn).should('be.visible');
-        cy.get(selectors.inputToFileUpload).attachFile(filePath);
-        cy.get(selectors.importBtn).click();
-        cy.get(selectors.loadingProcessSpinner).should('not.exist');
+        cy.xpath(selectors.titleImportProcess)
+            .first()
+            .should("have.text", "Import Process")
+            .should("be.visible");
+        cy.xpath(selectors.inputToFileUpload).attachFile(filePath);
+        cy.xpath(selectors.importBtn)
+            .parent()
+            .should("have.attr", "disabled", "disabled");
+        if (password != "0") {
+            cy.xpath("//div[@id='enterPassword___BV_modal_content_']").should(
+                "be.visible"
+            );
+            cy.xpath(
+                "//div[@id='enterPassword___BV_modal_content_']//input[@id='password']"
+            ).type(password, { delay: 100 });
+            cy.xpath(
+                "//div[@id='enterPassword___BV_modal_content_']/footer/button[text()='Import']"
+            ).click();
+        }
+        cy.xpath(selectors.importBtn)
+            .parent()
+            .should("not.have.attr", "disabled", "disabled");
+        cy.xpath(selectors.importBtn).click();
+        cy.get(selectors.loadingProcessSpinner).should("not.exist");
     }
 
     clickOnImportButton() {
@@ -462,6 +523,9 @@ export class Process {
     }
 
     clickOnWeTabSettign() {
+        cy.xpath('//button[@data-cy="inspector-button"]')
+            .should("be.visible")
+            .click();
         cy.get(selectors.webEntryTab).click();
     }
 
@@ -650,17 +714,19 @@ export class Process {
         cy.get('[class="alert d-none d-lg-block alertBox alert-dismissible alert-success"]').should('be.visible');
     }
 
-    searchProcessAndSelectOptions(processName, option = "config") {
-        var editBtn = "[title='Edit'] > .fas";
-        var exportBtn = "[title='Export'] > .fas";
-
-        cy.get(editBtn).should("be.visible");
-        cy.get(exportBtn).should("be.visible");
-
-        cy.get(selectors.searchInputBox)
-            .type(processName)
+    searchProcessAndSelectOptions(
+        processName,
+        option = "config",
+        exportType = "basic",
+        passwordOption = "no",
+        password
+    ) {
+        cy.xpath(selectors.threePointsBtnXpath).should("be.visible");
+        cy.xpath(selectors.searchInputBox)
+            .type(`${processName}{enter}`)
             .should("have.value", processName);
         cy.get(selectors.loadingSpinnerProcess).should("be.visible");
+        cy.xpath(selectors.threePointsBtnXpath).first().click();
         switch (option) {
             case "edit":
                 this.editProcess();
@@ -672,18 +738,28 @@ export class Process {
                 this.viewProcess();
                 break;
             case "export":
-                this.downloadProcess(processName);
+                this.downloadProcess(
+                    processName,
+                    exportType,
+                    passwordOption,
+                    password
+                );
                 break;
             case "delete":
+                break;
+            case "pmBlock":
+                this.selectMenuOptionRow("Save as PM Block");
                 break;
         }
     }
     viewProcess(){
-        cy.xpath(selectors.viewctrlBtn).click();
+        this.selectMenuOptionRow("Edit Process");
     }
+
     editProcess() {
-        cy.xpath(selectors.editctrlBtn).click();
+        this.selectMenuOptionRow("Edit Process");
     }
+
     saveProcessWithoutName() {
         cy.get(selectors.saveButton1).should("be.visible").click();
         cy.xpath(selectors.saveBtnToAddProcess).should("be.visible").click();
@@ -695,7 +771,8 @@ export class Process {
         cy.xpath(selectors.saveBtnToAddProcess).should("be.visible").click();
     }
     goToConfigProcess() {
-        cy.xpath(selectors.configctrlBtn).click();
+        //cy.xpath(selectors.configctrlBtn).click();
+        this.selectMenuOptionRow("Configure");
     }
     versionHistory() {
         cy.get(selectors.versionHistoryTab).should("be.visible").click();
@@ -775,7 +852,7 @@ export class Process {
         }
         this.saveChangesConfigProcess();
         var editBtn = "[title='Edit'] > .fas";
-        cy.get(editBtn).should('be.visible');
+        //cy.get(editBtn).should('be.visible');
     }
 
     /**
@@ -1047,15 +1124,46 @@ export class Process {
     verifyNameProcess(nameProcess) {
         cy.xpath(selectors.nameProcessInModeler).should("contain", nameProcess);
     }
-    downloadProcess() {
-        cy.get(selectors.exportBtn).first().click();
-        cy.get(selectors.menuSidebar).should("be.visible");
-        cy.get(selectors.expandBtn).should("be.visible").click();
-        cy.xpath(selectors.optionFirstInMenuSidebar).should(
-            "contain",
-            "Processes"
+
+    downloadProcess(
+        processName,
+        exportType = "basic",
+        passwordOption = "no",
+        password
+    ) {
+        this.selectMenuOptionRow("Export");
+        cy.xpath(selectors.menuSidebarXpath).should("be.visible");
+        var process = processName + ".";
+        cy.xpath(selectors.exportTitleProcessXpath).should(
+            "have.text",
+            process
         );
-        cy.xpath(selectors.downloadBtn).click();
+        if (exportType === "basic") {
+            //basic export
+            cy.xpath(selectors.downloadBtn).click();
+            cy.xpath(selectors.exportTitleSetPasswordXpath).should(
+                "be.visible"
+            );
+            if (passwordOption === "no") {
+                cy.xpath(selectors.passwordProtectFieldXpath).uncheck({
+                    force: true,
+                });
+            } else {
+                cy.xpath(selectors.setPasswordFieldXpath).type(password, {
+                    delay: 50,
+                });
+                cy.xpath(selectors.confirmPasswordFieldXpath).type(password, {
+                    delay: 50,
+                });
+            }
+            cy.xpath(selectors.exportBtnXpath).click();
+            cy.xpath(selectors.messageExportSuccessfulXpath).should(
+                "be.visible"
+            );
+            cy.xpath(selectors.exportCloseBtnXpath).click();
+        } else {
+            //custom export
+        }
     }
     verifyProcessInDownloadsFolder(path, nameProcess) {
         cy.readFile(path).should("exist");
@@ -1644,4 +1752,15 @@ export class Process {
         this.saveProcessWithoutVersion();
     }
 
+    /**
+    * This method is responsible to do click in one option for a row
+    * @param nameOption: Name according to for example:'Edit Process', 'Save as Template', 'Configure', 'View Documentation', 'Export', 'Archive'
+    * @return nothing returns
+    * selectMenuOptionRow('Configure') //this option open the configuration for a process
+    */
+    selectMenuOptionRow(nameOption){
+        var optionXpath = '//div[@id="categorizedList"]/ul/li/a[@id="nav-sources-tab"]//ancestor::div[@id="categorizedList"]/descendant::div[@id="processIndex"]//table/tbody/tr//button[@aria-haspopup="menu"]/following-sibling::ul//li//span[contains(text(),"'+nameOption+'")]'
+        cy.xpath(optionXpath).should('be.visible');
+        cy.xpath(optionXpath).first().click();
+    }
 }

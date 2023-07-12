@@ -483,11 +483,13 @@ export class Execution {
         cy.xpath('(//tr[@item-index="0"]/td/a)[2]').contains('Form Task 1').click();
         cy.xpath('//div/ul/li[@class="list-group-item"]/a').should('be.visible');
         cy.xpath('//input[@aria-label="Date"]').type('2021-10-01').type('{enter}');
-        cy.xpath('//div[@class="invalid-feedback"]/div[text()="Field is required"]').should('be.visible');
+        cy.xpath('//input[@name="image2"]').check();
+        cy.xpath('//input[@name="image2"]').uncheck();
+        cy.xpath('//span[@class="required-asterisk"]').should('be.visible');
         cy.xpath('//input[@name="image1"]').check();
         cy.xpath('//input[@name="image1"]').uncheck();
         cy.xpath('//input[@aria-label="Date"]').clear().type('2021-10-02').type('{enter}');
-        cy.xpath('//div[@class="invalid-feedback"]/div[text()="Field is required"]').should('be.visible');
+        cy.xpath('//span[@class="required-asterisk"]').should('be.visible');
         cy.xpath('//input[@name="image2"]').check();
         cy.xpath('//button[@aria-label="New Submit"]').click();
         request.verifyTaskIsCompleted();
@@ -515,11 +517,13 @@ export class Execution {
         var requestID2 = await request.getRequestID();           
         await cy.xpath(('//tr[@item-index="0"]/td/a')[1]).contains('Form Task 1').click();   
         cy.xpath('//input[@aria-label="Date"]').type('2021-10-01').type('{enter}');
-        cy.xpath('//div[@class="invalid-feedback"]/div[text()="Field is required"]').should('be.visible');
+        cy.xpath('//input[@name="image2"]').check();
+        cy.xpath('//input[@name="image2"]').uncheck();
+        cy.xpath('//span[@class="required-asterisk"]').should('be.visible');
         cy.xpath('//input[@name="image1"]').check();
         cy.xpath('//input[@name="image1"]').uncheck();
         cy.xpath('//input[@aria-label="Date"]').clear().type('2021-10-02').type('{enter}');
-        cy.xpath('//div[@class="invalid-feedback"]/div[text()="Field is required"]').should('be.visible');
+        cy.xpath('//span[@class="required-asterisk"]').should('be.visible');
         cy.xpath('//input[@name="image2"]').check();
         cy.xpath('//button[@aria-label="New Submit"]').click();
         request.verifyTaskIsCompleted();
@@ -535,7 +539,7 @@ export class Execution {
         navHelper.navigateToTasksPage();
         navHelper.navigateToRequestsPage();
         cy.visit('/requests/'+ requestID2);
-        request.waitUntilTextcontainText('selector','h4','Completed');
+        request.waitUntilTextcontainText('selector','#request > div > div.ml-md-3.mt-md-0.mt-3 > div > div > h4','Completed');
         await cy.xpath('(//div[@class="flex-grow-1"])[3]').should('contain.text', "Parallel Gateway: Label Undefined");
         cy.xpath('(//div[@class="flex-grow-1"])[4]').should('contain.text', "Parallel Gateway: Label Undefined");
         cy.xpath('(//div[@class="flex-grow-1"])[5]').should('contain.text', "Admin User has completed the task Form Task 1");
@@ -3986,7 +3990,10 @@ async actionsAndAssertionsOfTCP42332_4(taskName, process_id, subprocess_id, subp
         cy.wait(9000);
         cy.get(':nth-child(1) > .multiselect > .multiselect__tags>input').type('{enter}');
         cy.wait(5000);
-        cy.get('[title="Save"]').click();
+        cy.get(':nth-child(2) > .multiselect > .multiselect__tags').type('POST');
+        cy.wait(5000);
+        cy.get(':nth-child(2) > .multiselect > .multiselect__tags>input').type('{enter}');
+        cy.get('[title="Publish"]').click();
         cy.get('[class="btn btn-secondary"]').click();
     }
 
@@ -3998,7 +4005,8 @@ async actionsAndAssertionsOfTCP42332_4(taskName, process_id, subprocess_id, subp
         cy.wait(5000);
     }
     async reviewCollectionTCP42308 (){
-        cy.xpath("//*[@id='search-collection-box']").type('Doctor Collection').should('be.visible');
+        cy.xpath("//*[@id='search-collection-box']").type('Doctor Collection');
+        cy.xpath("//*[@id='search-collection-box']").should('be.visible');
         cy.wait(3000);
         cy.get('[title="Records"] > .fas').first().should('be.visible').click();
         cy.wait(3000);

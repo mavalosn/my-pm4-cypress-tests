@@ -50,9 +50,10 @@ describe("ProcessMaker Test Cases", () => {
             const method= "POST";
             const token = result_token;
             const description = 'test_2308';
+            const connectorType = "REST Service";
 
             navHelper.navigateToDataConnectorPage();
-            addDataConnector.createADataConnector(name, description, type);
+            addDataConnector.createADataConnector(name, description, type, connectorType);
             addDataConnector.addResourceForBearerToken(resourceName, description, method, URL, token);
 
             //Step 2: addDataConnector.enterBody();

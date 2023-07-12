@@ -2,15 +2,16 @@ import selectors from "../selectors/saveSearch"
 export class SaveSearchs {
     clickOnProcessesName(namesave) {
         //select one process
-        cy.get('div[class="multiselect__select"]').first().click()
-        cy.get('#option-0-3 > .multiselect__option > span').should("be.visible").click()
-        cy.get('.btn-search-run > .fas').click();
+        cy.xpath('//button[@class="btn btn-outline-secondary mr-1 d-flex align-items-center"]').first().click();
+        cy.xpath('(//label[text()="Process"]/parent::div//div[@class="multiselect__tags"])[1]').should("be.visible").click();
+        cy.get('#option-0-3').should("be.visible").click();
+        cy.get('[class="btn btn-primary btn-sm"]').click();
         //create save search
-        cy.get('.search-bar-additions > :nth-child(1) > div > .btn').click();
+        cy.xpath('//button[@title="Save Search"]').click();
         cy.get('[name="title"]').click().type(namesave).should('have.value', namesave);
         cy.wait(2000);
         cy.get('#save-search-modal___BV_modal_footer_ > .btn-secondary').click();
-    }
+    } 
     //search view save search
     viewSaveSearch(namesave) {
         cy.xpath("//input[@type='text'][@placeholder='Search']").should('be.visible');

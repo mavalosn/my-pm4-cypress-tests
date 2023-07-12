@@ -466,7 +466,7 @@ export class Admin {
         cy.get(".pagination")
             .should("be.visible")
             .and("contain", "1 - 1 of 1 Group");
-        cy.get('[title="Edit"]').click();
+            cy.xpath('//div[@id="main"]//table/tbody/tr//button[@aria-haspopup="menu"]').should('be.visible').click();
     }
 
     /**
@@ -475,8 +475,7 @@ export class Admin {
      * @return nothing returns
      */
     searchUserAndEdit(nameUser) {
-	    const editBtnXPATH = "//span[text()='nameUser']/ancestor::tr//button[@title='Edit']";
-
+        const editBtnXPATH = "//span[normalize-space()='Edit User']";
         cy.get('[placeholder="Search"]').should("be.visible");
         cy.get('[placeholder="Search"]').eq(0).click().type(nameUser);
         cy.get('[placeholder="Search"]')
@@ -487,6 +486,7 @@ export class Admin {
         cy.get(".jumbotron.jumbotron-fluid").should("be.visible");
         cy.get(".jumbotron.jumbotron-fluid").should("not.be.visible");
         cy.get('[placeholder="Search"]').should("have.value", nameUser);
+        cy.xpath("(//button[@class='btn dropdown-toggle btn-ellipsis dropdown-toggle-no-caret'])[1] ").should("be.visible").click();
         cy.xpath(editBtnXPATH.replace('nameUser',nameUser),{ timeout: 10000 })
             .should('be.visible').click();
     }
@@ -782,9 +782,8 @@ export class Admin {
      */
      createUserIfNotExist(username, firstName, lastName, jobTitle, status, email, password) {
         //search user
-        var editBtn = "[title='Edit'] > .fas";
-        cy.get(editBtn).should('be.visible');
-        cy.get('input[id="search-box"]').first().type(username).should('have.value', username);
+        cy.xpath(selectors.threePointsBtnXpath).should('be.visible');
+        cy.get(selectors.searchInputBox).first().type(username).should('have.value', username);
         cy.get('#users-listing > div.container-fluid > div > div.jumbotron.jumbotron-fluid').first().should('be.visible');
         cy.wait(2000)
         cy.xpath('//div[@id="users-listing"]/div[2]/div/div[2]/table/tbody/tr', { timeout: 10000 })
@@ -1063,5 +1062,60 @@ export class Admin {
                      this.createGroup(nameGroup,description)
                 }
             });
+    }
+
+    /**
+    * This method was created to create an auth client
+    * @param name: name of the auth client
+    * @param website: redirect website
+    * @return nothing returns
+    */
+    createAuthClient(name, website){
+        cy.xpath(selectors.authClientButton).should('be.visible').click();
+        cy.xpath('//input[@id="name"]').click().type(name).should('have.value', name);
+        cy.xpath('//input[@value="authorization_code_grant"]').click({force: true});
+        cy.xpath('//input[@id="redirect"]').type(website);
+        cy.xpath('//button[text()="Save"]').click({force: true});
+    }
+    /**
+    * This method was created to update an auth client
+    * @param name: name of the auth client
+    * @return nothing returns
+    */
+    updateAuthClient(name,newName = 'userName'){
+        cy.xpath(selectors.authClientButton).should('be.visible');
+        cy.xpath('//input[@aria-label="Search"]')
+            .click()
+            .type(name, {force:true});
+        cy.get(".jumbotron.jumbotron-fluid").should("be.visible");
+        cy.get(".jumbotron.jumbotron-fluid").should("not.be.visible");
+        cy.wait(3000);
+        cy.get(".pagination")
+            .should("be.visible")
+            .and("contain", "1 - 1 of 1 Auth Client");
+        cy.xpath('(//button[@aria-haspopup="menu"]/i)[2]').click();
+        cy.xpath('//span[text()="Edit Auth Client"]').click();
+        cy.xpath('//input[@id="name"]').clear().click().type(newName).should('have.value', newName);
+        cy.xpath('//button[text()="Save"]').click({force: true});
+    } 
+    /**
+    * This method was created to delete an auth client
+    * @param name: name of the auth client
+    * @return nothing returns
+    */
+    deleteAuthClient(name){
+        cy.xpath(selectors.authClientButton).should('be.visible');
+        cy.xpath('//input[@aria-label="Search"]')
+            .click()
+            .type(name, {force:true});
+        cy.get(".jumbotron.jumbotron-fluid").should("be.visible");
+        cy.get(".jumbotron.jumbotron-fluid").should("not.be.visible");
+        cy.wait(3000);
+        cy.get(".pagination")
+            .should("be.visible")
+            .and("contain", "1 - 1 of 1 Auth Client");
+        cy.xpath('(//button[@aria-haspopup="menu"]/i)[2]').click();
+        cy.xpath('//span[text()="Delete Auth Client"]').should('be.visible').click();
+        cy.xpath('//button[text()="Confirm"]').click();
     }
 }
