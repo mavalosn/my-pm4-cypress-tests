@@ -1,0 +1,161 @@
+{
+  "name": "TCP42222",
+  "screens": [
+    {
+      "name": "TCP4-2222-CS",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [{
+        "name": "Date Picker",
+        "varaible_name": "releaseDate",
+        "label_name": "Release Date",
+        "data_type": "Date"
+      },
+        {
+          "name": "Line Input",
+          "varaible_name": "title",
+          "label_name": "Title"
+        },
+        {
+          "name": "Line Input",
+          "varaible_name": "author",
+          "label_name": "Author"
+        },
+        {
+          "name": "Line Input",
+          "varaible_name": "price",
+          "label_name": "Price"
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": "submit",
+          "label_name":"New Submit"
+        }
+      ]
+    },
+    {
+      "name": "TCP4-2222-VS",
+      "description": "Testing the screens",
+      "type": "Display",
+      "controlls": [{
+        "name": "Rich Text",
+        "content": "<p>{{title}}</p>"
+      },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{author}}</p>"
+        },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{releaseDate}}</p>"
+        },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{price}}</p>"
+        }
+      ]
+    },
+    {
+      "name": "-FS",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [
+        {
+          "name": "Line Input",
+          "varaible_name": "aa"
+        },
+        {
+          "name": "Date Picker",
+          "varaible_name": "date",
+          "data_type": "Datetime"
+        },
+        {
+          "name": "Checkbox",
+          "varaible_name": "checkbox"
+        },
+        {
+          "name": "Record List",
+          "varaible_name": "recordlist",
+          "column": [{
+            "column_header": "Title",
+            "value": "selectlist.title"
+          },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            }
+          ]
+        },
+        {
+          "name":"File Upload",
+          "varaible_name":"fileUpload"
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": null
+        }
+      ]
+    },
+    {
+      "name": "-DS",
+      "description": "Testing the screens",
+      "type": "Display",
+      "controlls": [
+        {
+          "name":"Image",
+          "file_path":"Portrait-bust-Parmenides.jpg"
+        },
+        {
+          "name": "Record List",
+          "varaible_name": "recordlist",
+          "column": [{
+            "column_header": "Title",
+            "value": "selectlist.title"
+          },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "internalScreen":
+  {
+    "name": "selectList",
+    "controlls": [
+      {
+        "name": "Select List",
+        "varaible_name": "selectlist",
+        "datasource": {
+          "data_source": "Data Connector",
+          "options_varaible": "response.data",
+          "controlValue":"checkbox",
+          "return_value": "Object",
+          "content": "data.title",
+          "data_connector": "Books-Collection",
+          "endPoint": "ListAll"
+        }
+      }
+
+    ]
+  }
+}

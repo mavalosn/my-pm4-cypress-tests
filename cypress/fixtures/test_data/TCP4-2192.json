@@ -1,0 +1,102 @@
+{
+    
+    "name":"TCP4-2192",
+    "screens": [
+        {
+            "name":"TCP4-2192-FormScreen",
+            "description":"Testing the screens",
+             "type":"Form",
+             "controlls":[
+                 {
+                     "name":"Line Input",
+                     "varaible_name": "form_input_2",
+                    "label_name": "New Input",
+                     "rule":null
+
+                 },
+                 {
+                    "name":"Checkbox",
+                    "checkbox":null
+                },
+                 {
+                     "name":"Textarea"
+                 },
+                 {
+                     "name":"Select List",
+                     "datasource":{
+                        "options":[{
+                            "value":1,
+                            "content":"One"
+                        },
+                        {
+                            "value":2,
+                            "content":"Two"   
+                        },
+                        {
+                            "value":3,
+                            "content":"Three"
+                        }
+                    ],
+                        "data_source":"Provide Values"
+                        }
+                 },
+                 {
+                     "name":"Submit Button"
+                 }
+                
+                ]
+        },
+        {
+            "name":"TCP4-2192-NestedScreen",
+            "description":"Testing the screens",
+             "type":"Form",
+             "controlls":[
+                {
+                    "name":"Line Input",
+                    "varaible_name":null,
+                   "label_name": null,
+                    "rule":null
+
+                },
+                {
+                    "name":"Nested Screen",
+                    "NestedScreen":"TCP4-2192-FormScreen"
+
+                },
+                {
+                    "name":"Submit Button"
+                }
+        
+    ]
+        },
+        
+        {
+            "name":"TCP4-2175-Display",
+            "description":"Testing the screens",
+            "type":"Display",
+            "controlls":[
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{form_input_1}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{form_input_2}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{form_checkbox_1}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{form_text_area_1}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{form_select_list_1}}</p>"
+                }
+     ]
+     }
+    ]
+}
+

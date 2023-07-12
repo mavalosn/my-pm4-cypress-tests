@@ -1,0 +1,39 @@
+{
+  "name": "TCP42366",
+  "screens": [
+    {
+      "name": "TCP4-2366-Form-Screen",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [{
+          "name": "Select List",
+          "varaible_name": "selectlist",
+          "datasource": {
+            "data_source": "Data Connector",
+            "options_varaible": "response.data",
+            "allow_multiple_selections":"true",
+            "return_value": "Object",
+            "content": "data.title",
+            "data_connector": "BooksCollection",
+            "endPoint": "ListAll"
+          }
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": "submit",
+          "label_name":"New Submit"
+        }
+      ]
+    },
+    {
+      "name": "TCP4-2366-interstitial-Screen",
+      "description": "Testing the screens",
+      "type": "Display",
+      "controlls": [{
+          "name": "Rich Text",
+          "content": "<p>We're getting the next task for you...</p>"
+      }
+      ]
+  }
+  ]
+}

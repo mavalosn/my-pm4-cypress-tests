@@ -1,0 +1,19 @@
+{
+  "name":"2152",
+  "screens":[
+    {
+      "name":"2152-FS",
+      "description":"Automation testing",
+      "type":"Form",
+      "controlls":[
+        {
+          "name":"Line Input",
+          "varaible_name":"input"
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    }
+  ]
+}

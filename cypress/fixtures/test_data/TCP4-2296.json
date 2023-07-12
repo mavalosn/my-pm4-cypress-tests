@@ -1,0 +1,54 @@
+{
+  "name" : "TCP42296",
+  "screens" : [
+    {
+      "name" : "-2296-FSAA",
+      "description": "Testing the Screens",
+      "type": "Form",
+      "controlls" : [
+        {
+          "name":"File Upload",
+          "varaible_name" : "fileUpload",
+          "label_name" : "New File Upload"
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+
+    },{
+      "name" : "-2296-FSNS",
+      "description": "Testing the Screens",
+      "type": "Form",
+      "controlls" : [
+        {
+          "name" : "Line Input",
+          "varaible_name": "input",
+          "label_name" : "New Input",
+          "default_value" : "{{fileUpload}}"
+        },{
+          "name" : "File Download",
+          "varaible_name" : "fileUpload",
+          "label_name" : "New File Download"
+        },{
+          "name" : "Submit Button"
+        }
+      ]
+
+    },
+    {
+      "name" : "-2296-FSBB",
+      "description": "Testing the Screens",
+      "type": "Form",
+      "controlls" : [
+        {
+          "name":"Nested Screen",
+          "NestedScreen" : "-2296-FSNS"
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    }
+  ]
+}

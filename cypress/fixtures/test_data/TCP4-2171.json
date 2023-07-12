@@ -1,0 +1,26 @@
+{
+  "name":"TCP4-2171",
+  "screens": [
+    {
+      "name":"TCP4-2171-FS",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls":[
+        {
+          "name":"Line Input",
+          "varaible_name": "CommentType",
+          "label_name": "CommentType"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name": "Enable",
+          "label_name": "Enable",
+          "checkbox":"toggle"
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    }
+  ]
+}

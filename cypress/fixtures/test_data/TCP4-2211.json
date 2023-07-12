@@ -1,0 +1,122 @@
+{
+    "name":"TCP4-2211",
+    "screens":[
+        {
+            "name":"TCP4-2211-form-firstscreen",
+            "description": "Testing the screens",
+            "type":"Form",
+            "controlls":[
+                {
+                    "name":"Checkbox",
+                    "varaible_name":"checkbox",
+                    "label_name":"New checkbox",
+                    "datasource": {
+                        "data_source": "Data Connector",
+                        "options_varaible": "response.data",
+                        "allow_multiple_selections": false,
+                        "return_value": "Object",
+                        "content": "name",
+                        "data_connector": "2211-user",
+                        "endPoint": "list"
+                     }
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{output.text}}</p><p>{{output.text_imploded}}</p>"
+                },
+                {
+                    "name":"Date Picker",
+                    "label_name":"New Date Picker",
+                    "varaible_name":"date",
+                    "data_type":"Date"
+                },
+                {
+                    "name":"Record List",
+                    "column":[
+                    {
+                        "column_header":"id",
+                        "value":"selectlist.id"
+                    },
+                    {
+                        "column_header":"Email",
+                        "value":"selectlist.Email"
+                    },
+                    {
+                        "column_header":"Username",
+                        "value":"selectlist.Username"
+                    }
+                ]
+                   
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{var.text}}</p><p>{{var.text_imploded}}</p>"
+                },
+                {
+                    "name":"Submit Button"
+                },
+                {
+                    "name":"watchers",
+                    "watchers":[{
+                        "name":"watcher",
+                        "varaible_name":"checkbox",
+                        "script":"2211-userfirst",
+                        "second_script":"usersecondnested",
+                        "output":"output"
+                    },{
+                        "name":"watcher_foreign_languages",
+                        "varaible_name":"date",
+                        "script":"2211-usersecond",
+                        "output":"var"
+
+                    }]
+                }
+                
+            ]
+        },
+        {
+            "name":"TCP4-2211-nestedscreen",
+            "description":"Testing the screens",
+            "type":"Form",
+            "controlls":[{
+                "name":"Checkbox",
+                "varaible_name":"checkbox1"
+            },
+            {
+               "name":"Date Picker",
+               "varaible_name":"date",
+               "label_name":"Date" ,
+               "data_type":"Date"
+            },
+            {
+                "name":"Nested Screen",
+                "NestedScreen":"TCP4-2211-form-firstscreen",
+                "visibility":0,
+                "visibility_rule":"checkbox1 == true"
+            },
+            {
+                "name":"Submit Button"
+            }
+        ]
+        }
+    ],
+    "internalScreen":{
+        
+            "name":"newpage",
+            "controlls":[{
+            "name": "Select List",
+            "varaible_name": "selectlist",
+            "value":null,
+            "datasource": {
+              "data_source": "Data Connector",
+              "options_varaible": "response.data",
+              "allow_multiple_selections": false,
+              "return_value": "Object",
+              "content": "name",
+              "data_connector": "2211-user",
+              "endPoint": "list"
+              }
+        }
+    ]
+        }
+    }

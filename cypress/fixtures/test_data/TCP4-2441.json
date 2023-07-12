@@ -1,0 +1,207 @@
+{
+    "name":"TCP4-2441",
+   "screens":[
+       {
+           "name":"TCP4-2441-form-screen",
+           "description":"automation testing",
+           "type":"Form",
+           "controlls":[
+               {
+                   "name":"Checkbox",
+                   "varaible_name":null,
+                   "label_name":"checkbox_1",
+                   "validation_rule":"Accepted"
+               },
+               {
+                   "name":"Date Picker",
+                   "varaible_name":null,
+                   "label_name":"picker_1",
+                  "data_type":"Date"
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_1",
+                   "validation_rule":"Accepted"
+                   
+               },
+               {
+                   "name":"Checkbox",
+                   "varaible_name":null,
+                   "label_name":"checkbox_2",
+                   "validation_rule":"Required"
+               },
+               {
+                   "name":"Date Picker",
+                   "varaible_name":null,
+                   "label_name":"picker_2",
+                  "data_type":"Date",
+                  "validation_rule":"After Date",
+                  "value":"2020-02-20"
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_2",
+                   "validation_rule":"After Date",
+                   "value":"2020-02-20"
+                   
+               },
+               {
+                   "name":"Checkbox",
+                   "varaible_name":null,
+                   "label_name":"checkbox_3",
+                   "validation_rule":"Required If",
+                   "value":"form_checkbox_2",
+                   "value1":"true"
+               },
+               {
+                   "name":"Date Picker",
+                   "varaible_name":null,
+                   "label_name":"date_picker_3",
+                  "data_type":"Date",
+                  "validation_rule":"After or Equal to Date",
+                  "value":"2020-02-20"
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_3",
+                   "validation_rule":"Alpha"
+                   
+               },
+               {
+                   "name":"Checkbox",
+                   "varaible_name":null,
+                   "label_name":"checkbox_4",
+                   "validation_rule":"Required Unless",
+                   "value":"form_input_3",
+                   "value1":"test"
+               },
+               {
+                   "name":"Date Picker",
+                   "varaible_name":null,
+                   "label_name":"date_picker_4",
+                  "data_type":"Date",
+                  "validation_rule":"Before Date",
+                  "value":"2020-02-20"
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_4",
+                   "validation_rule":"Alpha-Numeric"
+                   
+               },
+               {
+                   "name":"Checkbox",
+                   "varaible_name":null,
+                   "label_name":"checkbox_5",
+                   "validation_rule":"Same",
+                   "value":"form_checkbox_4"
+                   
+               },
+               {
+                   "name":"Date Picker",
+                   "varaible_name":null,
+                   "label_name":"date_picker_5",
+                  "data_type":"Date",
+                  "validation_rule":"Before or Equal to Date",
+                  "value":"2020-02-20"
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_5",
+                   "validation_rule":"Email"
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_6",
+                   "validation_rule":"In",
+                   "value":20
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_7",
+                   "validation_rule":"Max Length",
+                   "value":5
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_8",
+                   "validation_rule":"Min Length",
+                   "value":4
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"nput_9",
+                   "validation_rule":"Not In",
+                   "value":20
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_10",
+                   "validation_rule":"Regex",
+                   "value":"test"
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_11",
+                   "validation_rule":"Required"
+                   
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_12",
+                   "validation_rule":"Required If",
+                   "value":"form_input_11",
+                   "value1":"test"
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_13",
+                   "validation_rule":"Required Unless",
+                   "value":"form_input_12",
+                   "value1":"test"
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_14",
+                   "validation_rule":"Same",
+                   "value":"form_input_13"
+                   
+               },
+               {
+                   "name":"Line Input",
+                   "varaible_name":null,
+                   "label_name":"input_15",
+                   "validation_rule":"URL"
+                  
+                   
+               },
+               {
+                   "name":"Submit Button"
+               }
+           ]
+       }
+   ]
+}

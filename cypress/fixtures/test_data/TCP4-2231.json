@@ -1,0 +1,48 @@
+{
+  "name":"TCP4-2231,",
+  "screens":[
+    {
+      "name":"TCP4-2231-FS2",
+      "description":"automation testing",
+      "type":"Form",
+      "controlls":[
+
+        {
+          "name":"Rich Text",
+          "content":"<h5 style='text-align: center;'><span style='color: #ba372a;'><strong>PAGE 1 All in Single Screen&nbsp;</strong></span></h5>"
+        },
+        {
+          "name":"Rich Text",
+          "content":"<p><span style='color: #236fa1;'><strong>Line Input</strong></span></p>"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"lineInputInteger",
+          "label_name":"Input Integer",
+          "data_type":"Integer",
+          "configuration":
+          {
+            "placeholder_text":"Enter Integer",
+            "helper_text":"Integer values"
+          }
+
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"lineInputPercentage",
+          "label_name":"Input Percentage",
+          "data_type":"Percentage",
+          "configuration":
+          {
+            "placeholder_text":"Enter Percentage",
+            "helper_text":"Percentage values"
+          }
+        },
+        {
+          "name":"Submit Button"
+        }
+
+      ]
+    }
+  ]
+}

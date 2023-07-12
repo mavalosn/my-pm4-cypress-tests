@@ -1,0 +1,57 @@
+{
+    "name" : "TCP4-2384",
+    "screens" : [
+        {
+            "name" : "TCP4-2384-conversation screen",
+            "description": "Testing the screens",
+            "type": "Conversational",
+            "controlls" : [
+                {
+                    "name" : "Rich Text",
+                    "content" : "{{<h4 style='text-align: right;'><em><span style='color: #843fa1;'><strong>Start</strong></span></em></h4>}}"
+                },
+                {
+                    "name" : "Line Input",
+                    "varaible_name" : "form_input_1",
+                    "label_name" : "form_input_1",
+                    "data_type" : "Text",
+                    "validation_rule" : "Accepted"
+                    
+                },
+                {
+                    "name" : "Line Input",
+                    "varaible_name" : "form_input_2",
+                    "label_name" : "form_input_2",
+                    "data_type" : "Text",
+                    "visiblity_rule" : "form_input_1 = 'yes'"
+                    
+                },{
+                    "name" : "Line Input",
+                    "varaible_name" : "form_input_3",
+                    "label_name" : "form_input_3",
+                    "data_type" : "Date",
+                    "place_holder" : "The placeholder is what is shown in the field when no value is provided yet"
+                },{
+                    "name": "Select List",
+                    "varaible_name": "form_select_list_1",
+                    "label_name" : "form_select_list_1",
+                    "datasource": {
+                      "data_source": "Provide Values",
+                      "options" : [
+                        {
+                            "value":"yes",
+                            "content":"yes"
+                        },{
+                            "value" : "no",
+                            "content" : "no"
+                        }
+                     ]
+                    }
+                  },{
+                    "name" : "Rich Text",
+                    "content" : "{{<p style=‘margin: 0.5em 0px; color: #202122; font-family: sans-serif; font-size: 14px; text-align: justify;’><strong>Titicaca</strong><span style=‘vertical-align: inherit;’>&nbsp;(in&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Aymara language’ href=‘https://es.wikipedia.org/wiki/Idioma_aimara’>Aymara</a><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;:&nbsp;</span><span style=‘vertical-align: inherit;’>Titiqaqa&nbsp;</span><span style=‘vertical-align: inherit;’>, from&nbsp;</span></span><em>titi&nbsp;</em><em>,</em><span style=‘vertical-align: inherit;’>&nbsp;'wild cat' and&nbsp;</span><em>qaqa</em><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;, 'gray hair'; referring to the&nbsp;</span><span style=‘vertical-align: inherit;’>gray&nbsp;</span></span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Leopardus jacobita’ href=‘https://es.wikipedia.org/wiki/Leopardus_jacobita’>Andean cat</a><span style=‘vertical-align: inherit;’>&nbsp;) is the highest navigable&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Lago’ href=‘https://es.wikipedia.org/wiki/Lago’>lake in the world, located in the&nbsp;</a><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Andes mountains’ href=‘https://es.wikipedia.org/wiki/Cordillera_de_los_Andes#Andes_Centrales’>central Andes</a><span style=‘vertical-align: inherit;’>&nbsp;, within the&nbsp;</span><a class=‘mw-redirect’ style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Collao Plateau’ href=‘https://es.wikipedia.org/wiki/Meseta_del_Collao’>plateau of the Collao</a><span style=‘vertical-align: inherit;’>&nbsp;, at an average altitude of 3812&nbsp;&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Meters above sea level’ href=‘https://es.wikipedia.org/wiki/Metros_sobre_el_nivel_del_mar’>m above sea level</a><span style=‘vertical-align: inherit;’>&nbsp;between the territories of&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Bolivia’ href=‘https://es.wikipedia.org/wiki/Bolivia’>Bolivia</a><span style=‘vertical-align: inherit;’>&nbsp;and&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Peru’ href=‘https://es.wikipedia.org/wiki/Per%C3%BA’>Peru</a><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;.&nbsp;</span><span style=‘vertical-align: inherit;’>It has an area of 8,300 km&sup2;, of which 56% (4,996 km&sup2;) correspond to Peru and 44% (3,304 km&sup2;) to Bolivia and 1,125&nbsp;&nbsp;</span></span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Kilometer’ href=‘https://es.wikipedia.org/wiki/Kil%C3%B3metro’>km</a><span style=‘vertical-align: inherit;’>&nbsp;of coastline;&nbsp;</span><sup id=‘cite_ref-International_Lake_Environment_Committee_2-0’ class=‘reference separada’ style=‘line-height: 1em; unicode-bidi: isolate; white-space: nowrap; margin-right: 0.6ch;’><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ href=‘https://es.wikipedia.org/wiki/Titicaca#cite_note-International_Lake_Environment_Committee-2’>2</a></sup><span style=‘vertical-align: inherit;’>&nbsp;its maximum depth is estimated at 281&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘M’ href=‘https://es.wikipedia.org/wiki/M’>m</a><span style=‘vertical-align: inherit;’>&nbsp;and its average depth is calculated at 107&nbsp;&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Metro’ href=‘https://es.wikipedia.org/wiki/Metro’>m</a><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;.&nbsp;</span><span style=‘vertical-align: inherit;’>Its level is irregular and increases during the southern summer.&nbsp;</span><span style=‘vertical-align: inherit;’>2</span></span><sup id=‘cite_ref-International_Lake_Environment_Committee_2-1’ class=‘reference separada’ style=‘line-height: 1em; unicode-bidi: isolate; white-space: nowrap; margin-right: 0.6ch;’></sup></p><p style=‘margin: 0.5em 0px; color: #202122; font-family: sans-serif; font-size: 14px; text-align: justify;’><span style=‘vertical-align: inherit;’>It is made up of two bodies of water separated by the&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Strait of Tiquina’ href=‘https://es.wikipedia.org/wiki/Estrecho_de_Tiquina’>Strait of Tiquina</a><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;;&nbsp;</span><span style=‘vertical-align: inherit;’>the largest located to the north is called Lake Mayor or Chucuito and has an area of 6450 km&sup2;, being in this part its greatest depth (283 m), near&nbsp;</span></span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Soto Island’ href=‘https://es.wikipedia.org/wiki/Isla_Soto’>Soto Island</a><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;.&nbsp;</span><span style=‘vertical-align: inherit;’>The other smaller body called Minor or&nbsp;</span></span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Wi&ntilde;aymarca’ href=‘https://es.wikipedia.org/wiki/Wi%C3%B1aymarca’>Lake Hui&ntilde;aymarca</a><span style=‘vertical-align: inherit;’>&nbsp;located to the south has an area of 2,112&nbsp;&nbsp;</span><a class=‘mw-redirect’ style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Km&sup2;’ href=‘https://es.wikipedia.org/wiki/Km%C2%B2’>km&sup2;</a><span style=‘vertical-align: inherit;’>&nbsp;, with a maximum depth of 45&nbsp;&nbsp;</span><a style=‘color: #0645ad; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;’ title=‘Metro’ href=‘https://es.wikipedia.org/wiki/Metro’>meters</a><span style=‘vertical-align: inherit;’>&nbsp;.</span></p><p style=‘margin: 0.5em 0px; color: #202122; font-family: sans-serif; font-size: 14px; text-align: justify;’><span style=‘vertical-align: inherit;’>Lake Titicaca is located between the Andean mountain ranges in a basin of around&nbsp;</span><span style=‘white-space: nowrap;’>58,000 km&sup2;</span><span style=‘vertical-align: inherit;’><span style=‘vertical-align: inherit;’>&nbsp;.&nbsp;</span><span style=‘vertical-align: inherit;’>3</span></span></p>}}"
+                  }
+            ]
+        }
+    ]
+}

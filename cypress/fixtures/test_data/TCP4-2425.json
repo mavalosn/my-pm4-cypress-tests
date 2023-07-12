@@ -1,0 +1,123 @@
+{
+  "name":"TCP4-2425",
+  "screens":[
+    {
+      "name":"TCP4-2425-DS",
+      "description":"Automation Testing",
+      "type":"Form",
+      "controlls":[
+        {
+          "name":"Record List",
+          "varaible_name":"form_record_list_1",
+          "label_name":"Editable Record List",
+          "column":[
+            {
+              "column_header":"date",
+              "value":"date"
+            },
+            {
+              "column_header":"DateTime",
+              "value":"DateTime"
+            },
+            {
+              "column_header":"name",
+              "value":"name"
+            },
+            {
+              "column_header":"Var",
+              "value":"varR"
+            },{
+              "column_header":"check1",
+              "value":"check1"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"form_record_list_1",
+          "label_name":"Display Record List",
+          "column":[
+            {
+              "column_header":"date",
+              "value":"date"
+            },
+            {
+              "column_header":"DateTime",
+              "value":"DateTime"
+            },
+            {
+              "column_header":"name",
+              "value":"name"
+            },
+            {
+              "column_header":"Var",
+              "value":"varR"
+            },
+            {
+              "column_header":"check1",
+              "value":"check1"
+            }
+          ]
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    }
+  ],
+  "internalScreen" : {
+    "name" : "Page2",
+    "controlls" : [
+      {
+        "name" : "Date Picker",
+        "varaible_name": "date",
+        "label_name" : "Date",
+        "data_type":"Date"
+      },
+      {
+        "name" : "Date Picker",
+        "varaible_name": "DateTime",
+        "label_name" : "DateTime",
+        "data_type":"Datetime"
+      },
+      {
+        "name" : "Checkbox",
+        "varaible_name" : "check1",
+        "label_name" : "check1"
+      },
+      {
+        "name" : "Line Input",
+        "varaible_name" : "name",
+        "label_name" : "Name"
+      },{
+        "name":"Select List",
+        "varaible_name" : "varR",
+        "label_name" : "Var",
+        "datasource":{
+          "data_source":"Provide Values",
+          "options":[{
+            "value":"var1",
+            "content":"var1"
+          },
+            {
+              "value":"var2",
+              "content":"var2"
+            },
+            {
+              "value":"var3",
+              "content":"var3"
+            },
+            {
+              "value":"var4",
+              "content":"var4"
+            },
+            {
+              "value":"var5",
+              "content":"var5"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

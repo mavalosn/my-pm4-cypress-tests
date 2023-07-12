@@ -1,0 +1,53 @@
+{
+    "name": "TCP4-2078",
+    "screens": [
+      {
+      "name": "TCP4-2078-Conersational-Screen",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [
+        {
+          "name": "Select List",
+          "varaible_name": "form_select_list_1",
+            "datasource": {
+              "data_source": "Request Data",
+              "options_varaible": "requestData",
+              "option_label_shown": "value",
+              "return_value": "Object"
+         }
+        },
+        {
+            "name":"Record List",
+            "record_Form":"page",
+            "column":{
+              "column_header":"selectList",
+              "value":"selectList.value"
+            }
+        },
+        {
+            "name":"Submit Button",
+            "varaible_name": null
+        }
+      ]
+    }
+],
+"internalScreen":
+    {
+        "name": "page",
+        "controlls": [
+          {
+            "name": "Select List",
+            "varaible_name": "selectList",
+            "label_name":"selectList",
+              "datasource": {
+                "data_source": "Request Data",
+                "options_varaible": "_parent.requestData",
+                "option_label_shown": "value",
+                "return_value": "Object"
+           }
+          }
+    
+]
+  }
+
+}

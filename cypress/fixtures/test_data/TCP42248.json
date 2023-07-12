@@ -1,0 +1,48 @@
+{
+  "name": "TCP42248",
+  "screens": [
+    {
+      "name": "2248FS1",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [{
+          "name": "Select List",
+          "varaible_name": "selectlist",
+          "datasource": {
+            "data_source": "Request Data",
+            "options_varaible": "response[1]",
+            "option_label_shown": "region.value",
+            "variable_data_property": "region.value"
+          }
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": null
+        }
+      ]
+    },
+    {
+      "name": "TCP4-2248FS2",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [{
+          "name": "Select List",
+          "varaible_name": "selectlist",
+          "datasource": {
+            "data_source": "Data Connector",
+            "options_varaible": "response.data",
+            "return_value": "Object",
+            "content": "data.title",
+            "data_connector": "BooksCollection",
+            "endPoint": "ListAll"
+          }
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": "submit",
+          "label_name":"New Submit"
+        }
+      ]
+    }
+  ]
+}

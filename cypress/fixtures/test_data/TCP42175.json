@@ -1,0 +1,264 @@
+{
+    "name":"TCP4-2175",
+    "screens":[
+        {
+            "name":"TCP4-2175-conversational",
+            "description": "Testing the screens",
+            "type":"Conversational",
+            "controlls":[
+                {
+                    "name":"Line Input",
+                    "varaible_name": "accepted",
+                    "label_name": "accepted",
+                    "validation_rule": "Accepted"
+                   
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "dateAfterDate",
+                    "label_name": "date - after date",
+                    "validation_rule":"After Date",
+                    "value":"2020-10-10"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "datetimeAfterorEqualToDate",
+                    "label_name": "datetime - After or Equal To Date",
+                    "validation_rule": "After or Equal to Date",
+                    "value":"2020-10-10"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "textAlpha",
+                    "label_name": "text - Alpha",
+                    "validation_rule": "Alpha"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "integerAlphaNumeric",
+                    "label_name": "integer - Alpha numeric",
+                    "validation_rule": "Alpha-Numeric"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "dateBeforedate",
+                    "label_name": "date - before date",
+                    "validation_rule":"Before Date",
+                    "value":"2020-10-10"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "dateTimeBeforeorEqualtoDate",
+                    "label_name": "dateTime - Before or Equal to Date",
+                    "validation_rule":"Before or Equal to Date",
+                    "value":"2020-10-10"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "textBeweenMinMax37",
+                    "label_name": "text Between Min & Max 3 - 7",
+                    "validation_rule":"Between Min & Max",
+                    "min":3,
+                    "max":7
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "dateDate",
+                    "label_name": "date date",
+                    "validation_rule":"Date"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "textEmail",
+                    "label_name": "text email",
+                    "validation_rule":"Email"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "integerIN9",
+                    "label_name": "integer - IN - 9",
+                    "validation_rule":"In",
+                    "value":9
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "passwordMaxLength10",
+                    "label_name": "password - Max Length 10",
+                    "validation_rule":"Max Length",
+                    "value":10
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "integerminlenght5",
+                    "label_name": "integer - min length 5",
+                    "validation_rule":"Min Length",
+                    "value":5
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "textnotin5",
+                    "label_name": "text - not in 5",
+                    "validation_rule": "Not In",
+                    "value":5
+                },
+               
+                {
+                    "name":"Line Input",
+                    "varaible_name": "requiredif",
+                    "label_name": "required if",
+                    "validation_rule": "Required If",
+                    "value":"accepted",
+                    "value1":"yes"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "requiredUnless",
+                    "label_name": "required Unless",
+                    "validation_rule": "Required Unless",
+                    "value":"textEmail",
+                    "value1":"ebfn3540@gmail.com"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "sameBefore",
+                    "label_name": "same before",
+                    "validation_rule": "Same",
+                    "value":"accepted"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "URL",
+                    "label_name": "URL",
+                    "validation_rule": "URL"
+                },
+                {
+                    "name":"Line Input",
+                    "varaible_name": "regexXYZ",
+                    "label_name": "regex[xyz]",
+                    "validation_rule": "Regex",
+                    "value":"[xyz]"  
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p> <a draggable='false' href='https://ecosia.org'> Click Here </a> </p>"
+                },
+                {
+                    "name":"Select List",
+                    "varaible_name": "list",
+                    "label_name": "list",
+                    "value":["one","two","three","four"],
+                    "content":["one","two","three","four"],
+                    "Data":null,
+                    "datasource":{
+                        "options":[{
+                            "value":"one",
+                            "content":"one"
+                        },
+                        {
+                            "value":"two",
+                            "content":"two"   
+                        },
+                        {
+                            "value":"three",
+                            "content":"three"
+                        },
+                        {
+                            "value":"four",
+                            "content":"four"
+                        }],
+                        "data_source":"Provide Values"
+                        },
+                    "multiple":0
+                }
+            ]
+        },
+        {
+            "name":"TCP4-2175-Display",
+            "description":"Testing the screens",
+            "type":"Display",
+            "controlls":[
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{accepted}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{dateAfterDate}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{datetimeAfterorEqualToDate}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{textAlpha}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{integerAlphaNumeric}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{dateBeforedate}}</p>"
+                },
+               
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{dateTimeBeforeorEqualtoDate}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{textBeweenMinMax37}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{dateDate}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{textEmail}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{integerIN9}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{passwordMaxLength10}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{integerminlenght5}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{textnotin5}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{requiredif}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{requiredUnless}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{sameBefore}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{URL}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{regexXYZ}}</p>"
+                },
+                {
+                    "name":"Rich Text",
+                    "content":"<p>{{list}}</p>"
+                }
+            ]
+        }
+    ]
+}

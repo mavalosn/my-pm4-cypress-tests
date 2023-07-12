@@ -1,0 +1,64 @@
+{
+  "name" : "TCP42404",
+  "screens" : [
+    {
+      "name" : "TCP4-2404-FS",
+      "description": "Testing the Screens",
+      "type": "Form",
+      "controlls" : [
+        {
+          "name":"Record List",
+          "varaible_name" : "upload_documents_grid_cash_drawer_setup",
+          "label_name" : "Upload Cash on hand Report and Cash Count Slip",
+          "column":[
+            {
+              "column_header":"Name",
+              "value":"name"
+            },
+            {
+              "column_header":"Date and Time",
+              "value":"date"
+            }]
+        },
+        {
+          "name":"Submit Button",
+          "varaible_name":"submit",
+          "label_name" : "New Submit"
+        }
+      ]
+
+    }
+  ],
+  "internalScreen" : {
+    "name" : "Page2",
+    "controlls" : [
+      {
+        "name" : "Line Input",
+        "varaible_name" : "name",
+        "label_name" : "Name",
+        "validation_rule" : "Required"
+      },{
+        "name" : "Date Picker",
+        "varaible_name" : "date",
+        "label_name" : "Date and Time",
+        "data_type" : "Datetime",
+        "read_only" : "Y"
+      },{
+        "name" : "File Upload",
+        "varaible_name" : "file",
+        "label_name" : "File",
+        "required" : "Y"
+      },{
+        "name" : "File Download",
+        "varaible_name" : "file",
+        "label_name" : "file_pre"
+      },{
+        "name" : "File Preview",
+        "varaible_name" : "file_pre",
+        "file_name" : "upload_documents_grid_cash_drawer_setup.file.{{row_id}}"
+      }
+    ]
+
+  }
+
+}

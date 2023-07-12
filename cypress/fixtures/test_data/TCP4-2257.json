@@ -1,0 +1,68 @@
+{
+  "name" : "TCP4-2257",
+  "screens" : [
+    {
+      "name" : "2257-SF",
+      "description" : "Testing the screens",
+      "type" : "Form",
+      "controlls" : [
+
+        {
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_1",
+          "label_name" : "New Textarea"
+        },
+        {
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_2",
+          "label_name" : "Textarea Read Only",
+          "read_only" : "Y"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_3",
+          "label_name" : "Textarea Place Holder",
+          "place_holder" : "PlaceHOLDER Text Area"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_4",
+          "label_name" : "Textarea Helper Text",
+          "helper_text" : "Helper Text"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_5",
+          "label_name" : "Textarea Rich Text",
+          "rich_textBtn" : "Y",
+          "rows" : "3"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_6",
+          "label_name" : "Textarea Default Value",
+          "default_value" : "Default Value"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_7",
+          "label_name" : "Textarea Visibility Rule",
+          "visibility_rule" : "Visibility Rule TextArea"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_8",
+          "label_name" : "Textarea aria label",
+          "aria_label" : "aria label"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_9",
+          "label_name" : "New Textarea",
+          "tab_order" : "2"
+        },{
+          "name" : "Textarea",
+          "varaible_name" : "form_text_area_10",
+          "label_name" : "Textarea Background Color and  text Color",
+          "text_color" : "info",
+          "background_color" : "success"
+        },{
+          "name" : "Submit Button"
+        }
+      ]
+    }
+  ]
+}

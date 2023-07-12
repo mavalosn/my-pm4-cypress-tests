@@ -1,9 +1,9 @@
 {
-        "baseUrl": "https://summer-testing-qa.processmaker.net",
+        "baseUrl": "https://test-qa.processmaker.net/",
         "env": {
             "username": "admin",
             "password": "admin",
-            "URL":"https://summer-testing-qa.processmaker.net",
+            "URL":"https://test-qa.processmaker.net/",
             "OutOfOfficeUserName":"qtest1",
             "OutOfOfficeFullName":"Test1 User",
             "DelegatedUser1":"User251 User251",

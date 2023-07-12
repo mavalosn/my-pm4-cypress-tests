@@ -1,0 +1,37 @@
+{
+  "name":"TCP4-2172",
+  "screens": [
+    {
+      "name":"TCP4-2172-FS",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls":[
+        {
+          "name":"Line Input",
+          "varaible_name": "CommentType",
+          "label_name": "CommentType"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name": "Enable",
+          "label_name": "Enable",
+          "checkbox":"toggle"
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    },
+    {
+      "name":"TCP4-2172-DS",
+      "description":"Testing the screens",
+      "type":"Display",
+      "controlls":[
+        {
+          "name":"Rich Text",
+          "content":"<h1><span style='color: #843fa1;'><strong>Completed!!!!!!</strong></span></h1>"
+        }
+      ]
+    }
+  ]
+}

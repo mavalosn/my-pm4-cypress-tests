@@ -1,0 +1,27 @@
+{
+    "name": "TCP42281",
+    "screens": [
+      {
+        "name": "TCP4-2281-FormScreen",
+        "description": "Testing the screens",
+        "type": "Form",
+        "controlls": [
+          {
+            "name": "Checkbox",
+            "varaible_name": "aa",
+            "label_name": "aa"
+          },
+          {
+            "name": "Checkbox",
+            "varaible_name": "bb",
+            "label_name": "bb"
+          },
+          {
+            "name": "Submit Button",
+            "varaible_name": "submit"
+          }
+        ]
+    }
+    ]
+  }
+  

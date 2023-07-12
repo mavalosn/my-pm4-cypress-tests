@@ -1,0 +1,117 @@
+{
+    "name":"TCP42400",
+    "screens":[
+        {
+      "name":"TCP4-2400-Create-Screen",
+      "description":"Testing the screens",
+      "type":"Form",
+      "controlls":[
+        {
+          "name":"Date Picker" ,
+          "varaible_name":"date",
+          "data_type":"Date"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"CI"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"name"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"lastName"
+        },
+        {
+            "name": "Select List",
+            "varaible_name": "profession",
+            "datasource": {
+              "data_source": "Provide Values",
+              "options":[
+                  {
+                      "value":"Medicine",
+                      "content":"Medicine"
+                  },
+                  {
+                    "value":"Engineering",
+                    "content":"Engineering"
+                },
+                {
+                    "value":"Lawyer",
+                    "content":"Lawyer"
+                },
+                {
+                    "value":"Security",
+                    "content":"Security"
+                },
+                {
+                    "value":"Economist",
+                    "content":"Economist"
+                }
+              ]
+         }
+        },
+        {
+            "name":"Line Input",
+            "varaible_name":"telephone"
+        },
+        {
+          "name":"Submit Button",
+          "varaible_name":"submit"
+        }
+      ]
+    },
+    {
+        "name":"TCP4-2400-View-Screen",
+        "description":"Testing the screens",
+        "type":"Display",
+        "controlls":[
+          {
+            "name":"Rich Text",
+            "content":"<p>{{date}}<p>"
+          },
+          {
+            "name":"Rich Text",
+            "content":"<p>{{CI}}<p>"
+          },
+          {
+            "name":"Rich Text",
+            "content":"<p>{{name}}<p>"
+          },
+          {
+            "name":"Rich Text",
+            "content":"<p>{{lastName}}<p>"
+          },
+          {
+            "name":"Rich Text",
+            "content":"<p>{{profession}}<p>"
+          },
+          {
+            "name":"Rich Text",
+            "content":"<p>{{telephone}}<p>"
+          }
+        ]
+    },
+        {
+            "name":"TCP4-2400-Form-Screen",
+             "description":"Testing the screens",
+             "type":"Form",
+             "controlls":[
+                {
+                    "name": "Select List",
+                    "varaible_name": "students",
+                    "datasource": {
+                      "data_source": "Data Connector",
+                      "options_varaible":"response.data",
+                      "return_value":"Single Value",
+                      "value":"data.id",
+                      "content":"data.name",
+                      "data_connector":"Students",
+                      "endPoint":"ListAll"
+                    }        
+                }
+             ]
+        }
+          ]
+}

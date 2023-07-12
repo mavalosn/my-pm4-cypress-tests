@@ -1,0 +1,63 @@
+{
+  "name": "TCP4-2227",
+  "screens": [
+    {
+    "name": "TCP4-2227-Conversational-Screen",
+    "description": "Testing the screens",
+    "type": "Conversational",
+    "controlls": [
+      {
+        "name": "Line Input",
+        "varaible_name": null
+
+      },
+      {
+        "name": "Select List",
+        "varaible_name": "selectlistmultiple",
+        "datasource": {
+          "data_source": "Data Connector",
+          "options_varaible": "response.data",
+          "allow_multiple_selections": true,
+          "return_value": "Object",
+          "content": "name",
+          "data_connector": "2227-groups",
+          "endPoint": "list"
+        }
+      },
+      {
+        "name": "Select List",
+        "varaible_name": "selectlist",
+        "datasource": {
+          "data_source": "Data Connector",
+          "options_varaible": "response.data",
+          "allow_multiple_selections": false,
+          "return_value": "Object",
+          "content": "name",
+          "data_connector": "2227-groups",
+          "endPoint": "list",
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiN2M1MDliM2U2YTlmODc0NjI4NGE3NmUyNDg1NmU5NTIwMDg1MGJmMmMwNmYyODFiNTNkMzc0MWEyODkwZTg2N2JjYmQ3NTc2MDMxMDNmMzQiLCJpYXQiOjE2NTcxMjAxMTcsIm5iZiI6MTY1NzEyMDExNywiZXhwIjoxNjg4NjU2MTE3LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.B0JVThj4q8PPpPgSh88-CABZ4JhRXInO96Kru2htt7ummpP8vN6G2Pz_gVCXynPV9Ss8NDrBvGwOxCYu_YJn0jFxQnuzTx7ksbYJdEYFKrqBfgameSsEjiAQMrSbiNm-yuHZ-67gItHwdbvMdkun_7C2uFznfsZYdiT1P1trsr46zy4UqnX14Ez9bOdtjhHLotE3kC-nBYBdVIqqkJCFP67QwqzqzQd6Ilfgh8olg25pqJOZ4-MVKVEiGiFL1mz8jejt4sN8dv-CZQE8IelqbkfY0TitBxFD9v_2Yl98hybcZxwNhnYF5sXPQZxVLl9sBg-wix9mE09PAS84laL2IiMMdJU2beAlGX3N77Lr7ejvzu0qc07UHY1WcXcHaHqaStDznIJjX4Ihi7kO_kZTq5J9k0SStvikPF-67xvw38lfp8a2wCE4z4qMOFUV4Kya0vvsHmSzw3qpgRE8Zw2zmQRJZkGjmZ0It-DZoirOxryguJITzk5rGbGJ9yw35pgVmM-odYL-fGW6DHcdBFxma2ySQGyKxf6_pY82DeoRrw8VhWUsZAVdfFJjg_LYmzK1wtOJ9X6PXUrZeHPHaDKyvGE6PQTiOrWWUUJgv-lvq5Ppq8FpFZjApCAQlLQejIfAIXb17e6CgWbW8jYPAWAt2TxBbU5C3HQzVZLg8JaNK5o"
+        }
+      },
+      {
+        "name": "Rich Text",
+        "content": "<p>{{selectlist.status}}</p>"
+      }
+    ]
+
+  },
+  {
+    "name": "TCP4-2227-display-Screen",
+    "description": "Testing the screens",
+    "type": "Display",
+    "controlls": [
+      {
+        "name": "Rich Text",
+        "content": "<p>{{selectlist.id}}</p><p>{{selectlist.name}}</p><p>{{selectlist.description}}</p><p>{{selectlist.status}}</p><p>{{selectlist.selected}}</p>"
+      }
+    ]
+
+  }
+]
+
+
+}

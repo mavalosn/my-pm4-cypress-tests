@@ -1,0 +1,104 @@
+{
+  "name":"TCP4-2208",
+  "screens":[{
+    "name":"TCP4-2208-formscreen",
+    "description":"Automation testing",
+    "type":"Form",
+    "controlls":[
+      {
+        "name":"Image",
+        "Name":"2208image1",
+        "filename":"1.jpg"
+
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign1",
+        "required":true
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign11",
+        "required":true
+      },
+      {
+        "name":"Image",
+        "Name":"2208Displayimage",
+        "filename":"drone.jpg"
+
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign2",
+        "required":true
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign22",
+        "required": false
+      },
+      {
+        "name":"Image",
+        "Name":"2208Displayimage2",
+        "filename":"2.png"
+
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign3",
+        "required":true
+      },
+      {
+        "name":"Signature",
+        "varaible_name":"sign33",
+        "required":true
+      },
+      {
+        "name":"Submit Button"
+      }
+    ]
+  },
+    {
+      "name":"TCP4-2208-Displayscreen",
+      "description":"Automation testing",
+      "type":"Display",
+      "controlls":[
+        {
+          "name":"Image",
+          "Name":"2208image1",
+          "filename":"1.jpg"
+
+
+        },
+        {
+          "name":"Rich Text",
+          "content":"<p>{{sign1}}</p>"
+        },
+        {
+          "name":"Image",
+          "Name":"2208image1",
+          "filename":"2.png"
+
+        },
+        {
+          "name":"Rich Text",
+          "content":"<p>{{sign2}}</p>"
+        },
+        {
+          "name":"Image",
+          "Name":"2208image1",
+          "filename":"drone.jpg"
+
+        },
+        {
+          "name":"Rich Text",
+          "content":"<p>{{sign3}}</p>"
+        }
+      ]
+    }
+
+  ]
+}
+
+
+

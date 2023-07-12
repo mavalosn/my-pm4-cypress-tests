@@ -1,0 +1,36 @@
+{
+    "name": "TCP4-2293",
+    "screens": [
+      {
+      "name": "TCP4-2293-Form-Screen",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [
+        {
+          "name": "File Upload",
+          "varaible_name": "file1"
+            
+        },
+        {
+            "name":"Submit Button"
+        }
+    ]
+    }, 
+    {
+        "name": "TCP4-2293-Display-Screen",
+        "description": "Testing the screens",
+        "type": "Display",
+        "controlls": [
+          {
+            "name": "File Download",
+            "varaible_name": "file1"
+              
+          },
+          {
+              "name":"File Preview",
+              "varaible_name": "file1"
+          }
+      ]
+      }
+] 
+  }

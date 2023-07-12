@@ -1,0 +1,45 @@
+{
+    "name" : "TCP42422",
+    "screens" : [
+        {
+            "name" : "TCP4-2422-screen-form",
+            "description": "Testing the Screens",
+            "type": "Form",
+            "controlls" : [
+                {
+                    "name":"Record List",
+                    "varaible_name": "form_record_list_1",
+                    "label_name":"New Record List",
+                    "column":[
+                        {
+                            "column_header":"Text",
+                            "value":"text"
+                        },
+                        {
+                            "column_header":"Check",
+                            "value":"Check"
+                        }]
+                    
+                },
+                {
+                    "name":"Submit Button"
+                }
+            ]
+
+        }
+    ],
+    "internalScreen" : {
+        "name" : "Page2",
+        "controlls" : [
+            {
+                "name" : "Line Input",
+                "varaible_name": "text",
+                "label_name" : "text"
+            },{
+                "name" : "Checkbox",
+                "varaible_name" : "Check",
+                "label_name" : "Check"
+            }
+        ]
+    }
+}

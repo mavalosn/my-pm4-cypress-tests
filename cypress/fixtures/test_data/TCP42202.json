@@ -1,0 +1,15 @@
+{
+    "name": "TCP42202",
+    "screens": [
+      {
+        "name": "TCP4-2202-Display-Screen",
+        "description": "Testing the screens",
+        "type": "Display",
+        "controlls": [{
+            "name": "Rich Text",
+            "content": "<p><b>TEXT</b></p> <p>{{text}}</p> <p>{{text_imploded}}</p>"
+          }
+        ]
+    }
+    ]
+ }

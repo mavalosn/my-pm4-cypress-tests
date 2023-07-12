@@ -1,0 +1,44 @@
+{
+    "name":"TCP42193",
+    "screens":[
+        {
+        "name": "TCP4-2193-Display-Screen",
+        "description": "Testing the screens",
+        "type": "Display",
+        "controlls":[
+            {
+                "name":"Rich Text",
+                "content":"<p>{{form_date_picker_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{Var1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.0.form_input_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.0.form_checkbox_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.1.form_input_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.1.form_checkbox_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.2.form_input_1}}</p>"
+            },
+            {
+                "name":"Rich Text",
+                "content":"<p>{{loop_1.2.form_checkbox_1}}</p>"
+            }
+        ]
+    }
+    ]
+}

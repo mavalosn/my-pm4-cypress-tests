@@ -1,0 +1,45 @@
+{
+  "name":"TCP4-2154",
+  "screens": [
+    {
+      "name":"TCP4-2154-FS",
+      "description":"Testing the screens",
+      "type":"Form",
+      "controlls":[
+        {
+          "name":"Line Input"
+
+        },
+        {
+          "name":"Textarea"
+        },
+        {
+          "name":"Date Picker",
+          "data_type":"Date"
+        },
+        {
+          "name":"Select List",
+          "datasource":{
+            "data_source":"Provide Values",
+            "options":-1
+          }
+
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    },
+    {
+      "name":"TCP4-2154-DS",
+      "description":"Testing the screens",
+      "type":"Display",
+      "controlls":[
+        {
+          "name": "Rich Text",
+          "content": "<ul> <li>{{form_input_1}}</li> <li>{{form_date_picker_1}}</li> <li>{{form_text_area_1}}</li> <li>{{form_select_list_1}}</li> </ul>"
+        }
+      ]
+    }
+  ]
+}

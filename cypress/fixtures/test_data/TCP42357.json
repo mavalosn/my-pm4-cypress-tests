@@ -1,0 +1,32 @@
+{
+    "name":"TCP42357",
+    "screens":[
+        {
+            "name":"TCP4-2357-FormScreen",
+            "description":"Testing the screens",
+            "type":"Form",
+            "controlls":[
+                {
+                    "name":"Rich Text",
+                    "content":"<p>Rich Text</p>"
+                },
+                {
+                    "name":"Line Input",
+                    "label_name":"form_input_1"
+                },
+                {
+                    "name":"Line Input",
+                    "label_name":"form_input_2"
+                }
+            ],
+            "controlls2": [
+                {
+                    "name": "Date Picker",
+                    "varaible_name": "datePicker",
+                    "label_name": "Date Picker",
+                    "data_type": "Date"
+                }
+            ]
+        }
+    ]
+}

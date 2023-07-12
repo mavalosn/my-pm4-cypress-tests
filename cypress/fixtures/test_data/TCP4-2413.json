@@ -1,0 +1,430 @@
+{
+  "name":"TCP4-2413",
+  "screens":[
+    {
+      "name": "TCP4-2413-Create-Screen",
+      "description": "Testing the screens",
+      "type": "Form",
+      "controlls": [{
+        "name": "Date Picker",
+        "varaible_name": "releaseDate",
+        "label_name": "Release Date",
+        "data_type": "Date"
+      },
+        {
+          "name": "Line Input",
+          "varaible_name": "title",
+          "label_name": "Title"
+        },
+        {
+          "name": "Line Input",
+          "varaible_name": "author",
+          "label_name": "Author"
+        },
+        {
+          "name": "Line Input",
+          "varaible_name": "price",
+          "label_name": "Price"
+        },
+        {
+          "name": "Submit Button",
+          "varaible_name": "submit"
+        }
+      ]
+    },
+    {
+      "name": "TCP4-2413-View-Screen",
+      "description": "Testing the screens",
+      "type": "Display",
+      "controlls": [{
+        "name": "Rich Text",
+        "content": "<p>{{title}}</p>"
+      },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{author}}</p>"
+        },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{releaseDate}}</p>"
+        },
+        {
+          "name": "Rich Text",
+          "content": "<p>{{price}}</p>"
+        }
+      ]
+    },
+    {
+      "name":"TCP4-2413-formScreen",
+      "description":"Automation testing",
+      "type":"Form",
+      "controlls":[
+        {
+          "name":"Checkbox",
+          "varaible_name":"aa",
+          "label_name":"aa"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name":"bb",
+          "label_name":"bb"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name":"cc",
+          "label_name":"cc"
+        }, {
+          "name":"Checkbox",
+          "varaible_name":"dd",
+          "label_name":"dd"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name":"ee",
+          "label_name":"ee"
+        },
+        {
+          "name":"Checkbox",
+          "varaible_name":"ff",
+          "label_name":"ff"
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist1",
+          "label_name":"New Record List",
+          "visibility_rule":"aa == true",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist2",
+          "label_name":"New Record List",
+          "visibility_rule":"bb == true",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist3",
+          "label_name":"New Record List",
+          "visibility_rule":"cc == true",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist4",
+          "label_name":"New Record List",
+          "visibility_rule":"dd == false",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist5",
+          "label_name":"New Record List",
+          "visibility_rule":"ee == false",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist6",
+          "label_name":"New Record List",
+          "visibility_rule":"ff == false",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Submit Button"
+        }
+      ]
+    },{
+      "name":"TCP4-2413-ConversationalScreen",
+      "description":"Automation testing",
+      "type":"Conversational",
+      "controlls":[
+        {
+          "name":"Rich Text",
+          "content":"<p>{{aa}}</p> <p>{{bb}}</p> <p>{{cc}}</p> <p>{{dd}}</p> <p>{{ee}}</p> <p>{{ff}}</p>"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name":"input",
+          "label_name":"New Input"
+        }
+      ]
+    },
+    {
+      "name":"TCP4-2413-DisplayScreen",
+      "description":"Automation testing",
+      "type":"Display",
+      "controlls":[
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist1",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist2",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist3",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist4",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist5",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Record List",
+          "varaible_name":"recordlist6",
+          "label_name":"New Record List",
+          "column":[
+            {
+              "column_header": "Title",
+              "value": "selectlist.title"
+            },
+            {
+              "column_header": "Author",
+              "value": "selectlist.author"
+            },
+            {
+              "column_header": "Price",
+              "value": "selectlist.price"
+            },
+            {
+              "column_header": "Release Date",
+              "value": "selectlist.releaseDate"
+            }
+          ]
+        },
+        {
+          "name":"Rich Text",
+          "content":"<p>{{aa}}</p> <p>{{bb}}</p><p>{{cc}}</p>"
+        },
+        {
+
+          "name":"Rich Text",
+          "content":"<p>{{dd}}</p> <p>{{ee}}</p> <p>{{ff}}</p>"
+
+        }
+      ]
+    }
+
+  ],
+  "internalScreen":{
+
+    "name":"newpage",
+    "controlls":[{
+      "name": "Select List",
+      "varaible_name": "selectlist",
+      "value":null,
+      "datasource": {
+        "data_source": "Data Connector",
+        "options_varaible": "response.data",
+        "allow_multiple_selections": false,
+        "return_value": "Object",
+        "content": "data.title",
+        "data_connector": "2413-Book",
+        "endPoint": "ListAll"
+      }
+    }]
+  }
+}

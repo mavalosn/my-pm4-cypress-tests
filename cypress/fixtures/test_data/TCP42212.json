@@ -1,0 +1,61 @@
+{
+    "name": "TCP4-2212",
+    "screens": [
+      {
+      "name": "CS2212",
+      "description": "Testing the screens",
+      "type": "Conversational",
+      "controlls": [
+        {
+          "name": "Select List",
+          "varaible_name": "selectlist_dataconnector",
+          "datasource": {
+            "data_source": "Data Connector",
+            "options_varaible": "response.data",
+            "return_value": "Object",
+            "content": "username",
+            "data_connector": "UsersDC",
+            "endPoint": "list"
+          }
+        },
+        {
+            "name": "Select List",
+            "varaible_name": "selectlist_providevalues",
+            "datasource": {
+              "data_source": "Provide Values",
+              "options":[
+                  {
+                      "value":"A",
+                      "content":"Germany"
+                  },
+                  {
+                    "value":"B",
+                    "content":"Israel"
+                },
+                {
+                    "value":"C",
+                    "content":"Japan"
+                }
+              ]
+         }
+        },
+        {
+            "name": "Select List",
+            "varaible_name": "selectlist_requestdata",
+            "datasource": {
+              "data_source": "Request Data",
+              "options_varaible": "information",
+              "option_label_shown": "name",
+              "return_value": "Object"
+         }
+        },
+        {
+            "name":"Line Input",
+            "varaible_name":"input"
+          }
+      ]
+  
+    }
+]
+  
+  }

@@ -1,0 +1,155 @@
+{
+  "name":"TCP4-2065",
+  "screens":[
+    {
+      "name":"TCP4-2065-conversational",
+      "description": "Testing the screens",
+      "type":"Conversational",
+      "controlls":[
+        {
+          "name":"Line Input",
+          "varaible_name": "accepted",
+          "label_name": "accepted",
+          "validation_rule": "Accepted"
+
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "dateAfterDate",
+          "label_name": "date - after date",
+          "validation_rule":"After Date",
+          "value":"2020-10-10"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "datetimeAfterorEqualToDate",
+          "label_name": "datetime - After or Equal To Date",
+          "validation_rule": "After or Equal to Date",
+          "value":"2020-10-10"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "textAlpha",
+          "label_name": "text - Alpha",
+
+          "validation_rule": "Alpha"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "integerAlphaNumeric",
+          "label_name": "integer - Alpha numeric",
+          "validation_rule": "Alpha-Numeric"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "dateBeforedate",
+          "label_name": "date - before date",
+
+          "validation_rule":"Before Date",
+          "value":"2020-10-10"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "dateTimeBeforeorEqualtoDate",
+          "label_name": "dateTime - Before or Equal to Date",
+          "validation_rule":"Before or Equal to Date",
+
+          "value":"2020-10-10"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "textBeweenMinMax37",
+          "label_name": "text Between Min & Max 3 - 8",
+
+          "validation_rule":"Between Min & Max",
+          "min":3,
+          "max":8
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "dateDate",
+          "label_name": "date Date",
+
+          "validation_rule":"Date"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "textEmail",
+          "label_name": "text email",
+          "validation_rule":"Email"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "integerIN8",
+          "label_name": "integer - IN - 8",
+          "validation_rule":"In",
+          "value":8
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "passwordMaxLength7",
+          "label_name": "password - Max Length7",
+          "validation_rule":"Max Length",
+          "value":7
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "integerminlenght4",
+          "label_name": "integer - min length 4",
+          "validation_rule":"Min Length",
+          "value":4
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "textnotin5",
+          "label_name": "text - not in 5",
+          "validation_rule": "Not In",
+          "value":5
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "regex",
+          "label_name": "regex(hello)",
+          "validation_rule": "Regex",
+          "value":"(hello)?"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "required",
+          "label_name": "required",
+          "validation_rule": "Required"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "requiredif",
+          "label_name": "required if",
+          "validation_rule": "Required If",
+          "value":"accepted",
+          "value1":"yes"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "requiredUnless",
+          "label_name": "required Unless",
+          "validation_rule": "Required Unless",
+          "value":"textEmail",
+          "value1":"ebfn3540@gmail.com"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "sameBefore",
+          "label_name": "same before",
+          "validation_rule": "Same",
+          "value":"accepted"
+        },
+        {
+          "name":"Line Input",
+          "varaible_name": "URL",
+          "label_name": "URL",
+          "validation_rule": "URL"
+        }
+      ]
+    }
+
+  ]
+}
