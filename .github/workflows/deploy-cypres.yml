@@ -49,7 +49,7 @@ jobs:
           config-file: cypress.json
           spec: "cypress/integration/tests/test_cases/core/TCP42076.spec.js"
           record: true
-          #parallel: true
+          parallel: true
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
