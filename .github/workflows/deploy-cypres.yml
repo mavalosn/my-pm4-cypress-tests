@@ -65,8 +65,8 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          ELECTRON_EXTRA_LAUNCH_ARGS: --disable-gpu
-          LIBVA_DRIVER_NAME: --disable-software-rasterizer
+          #ELECTRON_EXTRA_LAUNCH_ARGS: --disable-gpu
+          #LIBVA_DRIVER_NAME: --disable-software-rasterizer
       #- name: Upload Cypress Screenshots
       #  uses: actions/upload-artifact@v3
       #  # Only capture images on failure
