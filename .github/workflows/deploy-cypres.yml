@@ -36,7 +36,7 @@ jobs:
             pwd
             npx cypress --version
             echo "-------------------------------"
-            npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js        
+            npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/*.spec.js        
       #- name: Run Cypres user-activity-logging 👀
       #  run: npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/TCP42905.spec.js --browser chrome
       #- name: Run Cypres screen-builder 👀
