@@ -56,7 +56,7 @@ jobs:
           start: npx cypress run
           #wait-on: http://localhost:8080/
           config-file: cypress.json
-          spec: "cypress/integration/tests/test_cases/package-pm-block/TCP4-2904.spec.js"
+          spec: "**/*.spec.js"
           record: true
           #parallel: true
         env:

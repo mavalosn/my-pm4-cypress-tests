@@ -1,9 +1,9 @@
 {
-        "baseUrl": "https://ci-3579d2cbb5.eng.processmaker.net/",
+        "baseUrl": "https://ci-3579d2cbb5.eng.processmaker.net",
         "env": {
             "username": "admin",
             "password": "qastm2023",
-            "URL":"https://ci-3579d2cbb5.eng.processmaker.net/",
+            "URL":"https://ci-3579d2cbb5.eng.processmaker.net",
             "OutOfOfficeUserName":"qtest1",
             "OutOfOfficeFullName":"Test1 User",
             "DelegatedUser1":"User251 User251",
