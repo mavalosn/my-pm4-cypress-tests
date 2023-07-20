@@ -5,7 +5,7 @@
 </div>
 
 
-### Run Tests
+### Run Tests 
 ```sh
 npx cypress run --headed
 ```
