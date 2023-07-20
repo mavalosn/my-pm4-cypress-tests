@@ -9,10 +9,10 @@ on:
 jobs:
   ci:
     runs-on: self-hosted
-    strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [ 0, 1, 2, 3, 4  ]
+    #strategy:
+    #  fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+    #  matrix:
+    #    containers: [ 0, 1, 2, 3, 4  ]
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@main
@@ -36,7 +36,7 @@ jobs:
             pwd
             npx cypress --version
             echo "-------------------------------"
-            npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/*.spec.js        
+            npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/TCP42905.spec.js
       #- name: Run Cypres user-activity-logging 👀
       #  run: npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/TCP42905.spec.js --browser chrome
       #- name: Run Cypres screen-builder 👀
