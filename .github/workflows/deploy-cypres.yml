@@ -8,7 +8,7 @@ on:
   pull_request:
 jobs:
   ci:
-    runs-on: 'ubuntu-latest'
+    runs-on: self-hosted
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
       matrix:
@@ -26,17 +26,17 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
-      #- name: Run Cypres package-pm-block 👀
-      #  run: |
-      #      echo "Running Nightly Job... "
-      #      echo "-------------------------------"
-      #      node -v
-      #      npm -v
-      #      ls -la
-      #      pwd
-      #      npx cypress --version
-      #      echo "-------------------------------"
-      #      npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/*.spec.js        
+      - name: Run Cypres package-pm-block 👀
+        run: |
+            echo "Running Nightly Job... "
+            echo "-------------------------------"
+            node -v
+            npm -v
+            ls -la
+            pwd
+            npx cypress --version
+            echo "-------------------------------"
+            npx cypress run --spec ./cypress/integration/tests/test_cases/package-pm-block/*.spec.js        
       #- name: Run Cypres user-activity-logging 👀
       #  run: npx cypress run --spec ./cypress/integration/tests/test_cases/core/user-activity-logging/TCP42905.spec.js --browser chrome
       #- name: Run Cypres screen-builder 👀
@@ -49,24 +49,24 @@ jobs:
       #- name: Run tests 🧪
       #  run: npm run test-unit
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          install: false
-          start: npx cypress run
-          #wait-on: http://localhost:8080/
-          config-file: cypress.json
-          spec: "./cypress/integration/tests/**/*.spec.js"
-          record: true
-          #parallel: true
-        env:
-          # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
-          # in GitHub repo → Settings → Secrets → Actions
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          #ELECTRON_EXTRA_LAUNCH_ARGS: --disable-gpu
-          #LIBVA_DRIVER_NAME: --disable-software-rasterizer
+      #- name: Cypress run
+      #  uses: cypress-io/github-action@v5
+      #  with:
+      #    install: false
+      #    start: npx cypress run
+      #    #wait-on: http://localhost:8080/
+      #    config-file: cypress.json
+      #    spec: "./cypress/integration/tests/**/*.spec.js"
+      #    record: true
+      #    #parallel: true
+      #  env:
+      #    # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
+      #    # in GitHub repo → Settings → Secrets → Actions
+      #    CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      #    # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #    #ELECTRON_EXTRA_LAUNCH_ARGS: --disable-gpu
+      #    #LIBVA_DRIVER_NAME: --disable-software-rasterizer
       #- name: Upload Cypress Screenshots
       #  uses: actions/upload-artifact@v3
       #  # Only capture images on failure
